@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/practica/practica.css" />
+    <title>ECOGRAM</title>
+  </head>
+  <body>
+    <header>
+      <nav class="topnav" id="myTopnav">
+        <a href="#home" onclick="openPage('home-principal', this,'rgb(12 46 45 / 0%)')">Home</a>
+        <a href="#search" onclick="openPage('search', this,'rgb(12 46 45 / 0%)')">Search</a>
+        <a href="#aboutUs" onclick="openPage('aboutUs', this,'rgb(12 46 45 / 0%)')">About Us</a>
+        <a href="#editProfile" onclick="openPage('editProfile', this,'rgb(12 46 45 / 0%)')">Edit Profile</a>
+        <a href="#signOut" onclick="openPage('signOut', this,'rgb(12 46 45 / 0%)')">Sign Out</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <img src="/src/img/Icons/Menu.png" alt="Home">
+        </a>
+      </nav>
+    </header>
+
+    <main>
+<!-- ************** PAGE HOME ************** -->
+      <section class="home-principal Box" id="home-principal">
+        <!-- ************** PAGE HOME CONTAINER ************** -->
+        <div class="home">
+          <!-- ************** BANNER BOX ************** -->
+          <div class="Banner">
+            
+          </div>
+
+          <!-- ************** BIO BOX ************** -->
+          <div class="Bio">
+            <div class="BioBox">
+              <div class="NameUser">
+                <h1>LUPITA PEREZ</h1>
+              </div>
+              <div class="InfUser">
+                <img class="avatarUser" src="/src/img/Avatares/Animals/AvatarA9.png" alt=""> <br>
+                <p>@LUP16</p>
+                <p>PERÚ</p>
+              </div>
+              <div class="BioUser">
+                <p>Hola, ecogramers; soy amante del reciclaje. Realizo casitas para mascotas con llantas. Puedes ver mi trabajo en mi galería.</p>
+              </div>
+              <div class="interestUser">
+                <div class="interests">
+                  <img src="/src/img/Intereses/InteresesCN/ReciclajeCN.png" alt="">
+                  <img src="/src/img/Intereses/InteresesCN/SiembraCN.png" alt="">
+                  <img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt="">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          
+
+          <!-- ************** PUBLICATION CONTAINER ************** -->
+          <div class="Publications-Container">
+            <!-- ************** FOOTER PUBLICATION CONTAINER ************** -->
+          <nav class="nav-Publications">
+            <button class="tablink" onclick="openCity('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">Publication</button>
+            <button class="tablink" onclick="openCity('events', this, 'rgb(28, 70, 99)')">Events</button>
+            <button class="tablink" onclick="openCity('galery', this, 'rgb(102, 74, 31)')">Galery</button>
+            <button class="tablink" onclick="openCity('historial', this, 'rgb(172, 35, 35)')">History</button>
+          </nav>
+
+            <div id="publications" class="tabcontent"><br>
+              <h1>PUBLICATIONS PUBLIC</h1>
+              <p>All publications</p>
+            </div>
+            
+            <div id="events" class="tabcontent">
+              <h1>EVENTS</h1>
+              <p>All events</p>
+            </div>
+            
+            <div id="galery" class="tabcontent">
+              <h1>MY GALLERY</h1>
+              <p>Photos</p>
+            </div>
+
+            <div id="historial" class="tabcontent">
+              <h1>HISTORIAL</h1>
+              <p>All likes</p>
+            </div>
+            
+            <!-- ************** FOOTER PUBLICATION CONTAINER ************** -->
+            <footer class="footer-Publications">
+            <button class="tablink" onclick="openCity('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">Publication</button>
+            <button class="tablink" onclick="openCity('events', this, 'rgb(28, 70, 99)')">Events</button>
+            <button class="tablink" onclick="openCity('galery', this, 'rgb(102, 74, 31)')">Galery</button>
+            <button class="tablink" onclick="openCity('historial', this, 'rgb(172, 35, 35)')">History</button>
+          </footer>
+          </div>
+        </div>
+      </section>
+
+<!-- ************** PAGE SEARCH ************** -->
+
+
+      <section class="search Box" id="search">
+        
+      </section>
+
+
+<!-- ************** PAGE ABOUT US ************** -->
+      <section class="aboutUs Box" id="aboutUs">
+
+      </section>
+
+<!-- ************** PAGE EDIT PROFILE ************** -->
+      <section class="editProfile Box" id="editProfile">
+
+      </section>
+
+<!-- ************** PAGE SIGN OUT ************** -->
+      <section class="signOut Box" id="signOut">
+
+      </section>
+
+    </main>
+
+<!-- ************** FUNTIONS ************** -->
+    <script>
+
+/************** NAVS GENERAL **************/
+
+      /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
+/************** PAGE PUBLICATIONS**************/
+function openPage(pageName,elmnt,color) {
+        var i, Box, BoxNavs;
+        Box = document.getElementsByClassName("Box");
+        for (i = 0; i < Box.length; i++) {
+          Box[i].style.display = "none";
+        }
+        BoxNavs = document.getElementsByClassName("BoxNavs");
+        for (i = 0; i < BoxNavs.length; i++) {
+          BoxNavs[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+      }
+
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+    </script>
+    <script src="/src/practica/practica.js" type="module"></script>
+  </body>
+</html>
+
+

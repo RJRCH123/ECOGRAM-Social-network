@@ -1,77 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
 * {
   margin: 0;
 }
-
-/***************** HEADER *****************/
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
+body{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.87)),
+    url("../img/Photos/Gif1.gif");
+  color: beige;
+  background-size: cover;
+  font-family: 'Roboto';
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
+/************* HEADER *************/
+
+.header {
+  height: 60px;
+  background-color:  rgb(21 32 36 / 69%);
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-family: Roboto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  background-color: #000000bf;
+}
+
+.nav-link {
   text-decoration: none;
-  font-size: 17px;
+  color: beige;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
+.logo {
+  width: 30%;
 }
 
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-menu-item {
+  font-size: 18px;
+  /* margin: 0 10px;
+  line-height: 80px; */
+  width: max-content;
+}
+
+.nav-menu-item img {
+  width: 40%;
+}
+
+.nav-menu-item p {
+  display: none; 
+}
+
+.nav-menu-link:hover {
+  background-color: none;
+  color:#84f0deea;
+  transition: 0.5s;
+}
+
+.nav-menu-link {
+  border-radius: 5px;
+}
+
+.NavToggle {
+  background-color: rgb(40 56 55 / 0%);
+  border: none;
   display: none;
+  cursor: pointer;
 }
 
-.icon img {
-  width: 10%;
+.MenuBar {
+  width: 40px;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: relative;
+
+
+
+@media (max-width: 768px) {
+
+  
+
+  .logo {
+    width: 50%;
   }
-  .topnav.responsive a.icon {
+
+  .nav-menu {
+    flex-direction: column;
+    /* align-items: center; */
+    /* list-style: none; */
+    background-color: black;
     position: absolute;
-    right: 0;
-    top: 0;
+    left: 0;
+    top: 55px;
+    width: 100%;
+    /* padding: 20px 0; */
+    height: calc(100% - 80px);
+    /* overflow-y: auto; */
+    left: 100%;
+    transition: left 0.3s;
+    z-index: 5;
+    /* padding: 10% 0% 0% 10.7%;*/
   }
-  .topnav.responsive a {
-    float: none;
+
+  .nav-menu-item {
+  display: flex;
+  }
+
+  .nav-menu-item img {
+    width: 50px;
+  }
+
+  .nav-menu-item p {
+    display: block; 
+  }
+
+
+  .nav-menu-link:hover {
+    background-color: none;
+    color: #45aa4aea;
+  }
+
+  .NavToggle {
     display: block;
-    text-align: left;
   }
+
+  .nav-menu_visible {
+    left: 0;
+    display: block;
+    width: -webkit-fill-available;
+    display: inline-grid;
+    /* justify-items: start; */
+    justify-content: center;
+  }
+
+  .MenuBar {
+    width: 40px;
+  }
+
+  /* Hover of line */
+  .nav-menu li {
+    margin: 3%;
+
+  }
+
+  .nav-menu a {
+    position: relative;
+    display: block;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    column-gap: 10%;
+    justify-content: space-around;
+  }
+
+  .nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, rgb(9, 117, 54), rgb(12, 119, 44), rgb(115, 207, 150));
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .nav-menu a:hover::before {
+    transform: scaleX(1);
+  }
+  .nav-menu[data-animation="center"] a::before {
+    transform-origin: center;
+  }
+
+
 }
 
-/***************** PAGE C/U GENERAL *****************/
+/************* PAGES COLOR *****************/
 
-/***************** PAGE HOME *****************/
+#Home {background-color: pink;}
+#Search {background-color: greenyellow;}
+#EditProfile {background-color:  blueviolet;}
+#AboutUs {background-color: brown;}
+#SignOut {background-color: skyblue;}
 
-.home {
+
+/************* BOX GRID 1: HOME*************/
+.HomeBox {
   display: grid;
-  grid-template-columns: 1fr;
-
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
   gap: 0% 0%;
   grid-auto-flow: row;
   justify-content: stretch;
@@ -79,33 +208,54 @@
   justify-items: stretch;
   align-items: stretch;
   grid-template-areas:
-    "Banner"
-    "Bio"
-    "Publications-Container";
+    "ProfileBox PublicationsBox";
 }
 
-.Banner {
+.ProfileBox {
+
   justify-self: stretch;
   align-self: stretch;
-  grid-area: Banner;
-  background-color: burlywood;
-  height: 150px;
+  grid-area: ProfileBox;
 }
 
-.Bio {
+.PublicationsBox {
+
   justify-self: stretch;
   align-self: stretch;
-  grid-area: Bio;
-  background-color: rgb(82, 54, 17);
-  height: 100%;
+  grid-area: PublicationsBox;
 }
 
-.Publications-Container {
+/************* PROFILE BOX-BOX *************/
+
+.ProfileBox-Box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1.8fr;
+  gap: 0% 0%;
+  grid-auto-flow: row dense;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "NameBox"
+    "InfBox";
+}
+
+.NameBox {
+
   justify-self: stretch;
   align-self: stretch;
-  grid-area: Publications-Container;
-  height: 500px;
+  grid-area: NameBox;
 }
+
+.InfBox {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: InfBox;
+}
+
 
 /***************** CONTAINER PUBLICATIONS (EVENTS, GALERY, PUBLICS, HISTORIAL) *****************/
 
@@ -168,80 +318,8 @@
   }
 }
 
-/**************** BOX BIO *****************/
+/************* *************/
 
-.BioBox {
-  display: grid;
-  grid-template-rows: 0.2fr 1.8fr;
-  gap: 2% 2%;
-  margin: 3%;
-  grid-auto-flow: row;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-items: stretch;
-  align-items: stretch;
-  grid-template-areas:
-    "NameUser NameUser NameUser"
-    "InfUser BioUser interestUser";
-}
+/************* *************/
 
-.NameUser {
-  grid-area: NameUser;
-  justify-self: center; 
-  margin: 2%;
-  color: beige;
-}
-
-.avatarUser {
-    width: 40%;
-    border-radius: 100%;
-  border-width: 7px;
-  border-color: rgb(43 103 108);
-  border-style: solid;
-}
-
-.InfUser {
-  grid-area: InfUser;
-  border-radius: 10px;
-  height: 100%;
-  display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.BioUser {
-  grid-area: BioUser;
-  background-color: rgba(245, 245, 220, 0.808);
-  border-radius: 10px;
-  padding: 8%;
-}
-
-.interestUser {
-  grid-area: interestUser;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 5%;
-
-}
-
-.interests img {
-  width: 50px;
-}
-
-@media screen and (max-width: 600px) {
-  .BioBox {
-    display: flex;
-    flex-direction: column;
-  }
-  .BioUser,
-  .InfUser
-  {
-      margin-top: 2%;
-  }
-  .NameUser {
-      text-align: center;
-      color: beige;
-  }
-}
+/************* *************/

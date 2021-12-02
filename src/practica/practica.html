@@ -169,7 +169,7 @@
       <!-- ABOUT US PAGE -->
       <section id="AboutUs" class="Box">
           <div>
-            
+
           </div>
       </section>
 
@@ -220,10 +220,27 @@
       // Add the specific color to the button used to open the tab content
       elmnt.style.backgroundColor = color;
     }
+
+    // Event for Nav-Menu responsive
+
+      const navToggle = document.querySelector('.NavToggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      // BAR NAVEGATION
+
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('nav-menu_visible');
+
+        // Event for area-label open and close menu
+
+        if (navMenu.classList.contains('nav-menu_visible')) {
+          navToggle.setAttribute('aria-label', 'Close menu');
+        } else {
+          navToggle.setAttribute('aria-label', 'Open menu')
+        }
+      });
+
     </script>
-
-
-    <script src="/src/practica/practica.js" type="module"></script>
   </body>
 </html>
 

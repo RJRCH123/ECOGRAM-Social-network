@@ -100,7 +100,7 @@ body{
     background-color: black;
     position: absolute;
     left: 0;
-    top: 55px;
+    top: 70px;
     width: 100%;
     /* padding: 20px 0; */
     height: calc(100% - 80px);
@@ -261,7 +261,7 @@ body{
 
 /* Style the tab buttons */
 .tablink {
-  background-color: #555;
+  background-color: rgb(64, 133, 55);
   color: white;
   float: left;
   border: none;
@@ -274,12 +274,12 @@ body{
 
 /* Change background color of buttons on hover */
 .tablink:hover {
-  background-color: #777;
+  background-color: rgba(65, 64, 64, 0.637);
 }
 
 /* Set default styles for tab content */
 .tabcontent {
-  color: white;
+  color: black;
   display: none;
   padding: 50px;
   text-align: center;
@@ -288,16 +288,16 @@ body{
 
 /* Style each tab content individually */
 #publications {
-  background-color: rgb(26, 77, 33);
+  background-color: rgb(255, 255, 255);
 }
 #events {
-  background-color: rgb(28, 70, 99);
+  background-color: rgb(255, 255, 255);
 }
 #galery {
-  background-color: rgb(102, 74, 31);
+  background-color: rgb(255, 255, 255);
 }
 #historial {
-  background-color: rgb(172, 35, 35);
+  background-color: rgb(255, 255, 255);
 }
 
 .nav-Publications {
@@ -308,6 +308,9 @@ body{
   display: none;
 }
 
+.nav-Publications img {
+  width: 15%;
+}
 @media screen and (max-width: 600px) {
   .nav-Publications {
     display: none;
@@ -315,6 +318,11 @@ body{
 
   .footer-Publications {
     display: block;
+  }
+
+  .footer-Publications img,
+  .nav-Publications img  {
+    width: 40%;
   }
 }
 

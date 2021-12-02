@@ -182,79 +182,19 @@ body{
   .nav-menu[data-animation="center"] a::before {
     transform-origin: center;
   }
-
-
 }
 
 /************* PAGES COLOR *****************/
 
-#Home {background-color: pink;}
+.Box {
+  height: 500px;
+}
+
+#Home {background-color;}
 #Search {background-color: greenyellow;}
 #EditProfile {background-color:  blueviolet;}
 #AboutUs {background-color: brown;}
 #SignOut {background-color: skyblue;}
-
-
-/************* BOX GRID 1: HOME*************/
-.HomeBox {
-  display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
-  grid-template-rows: 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0% 0%;
-  grid-auto-flow: row;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-items: stretch;
-  align-items: stretch;
-  grid-template-areas:
-    "ProfileBox PublicationsBox";
-}
-
-.ProfileBox {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: ProfileBox;
-}
-
-.PublicationsBox {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: PublicationsBox;
-}
-
-/************* PROFILE BOX-BOX *************/
-
-.ProfileBox-Box {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0.2fr 1.8fr;
-  gap: 0% 0%;
-  grid-auto-flow: row dense;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-items: stretch;
-  align-items: stretch;
-  grid-template-areas:
-    "NameBox"
-    "InfBox";
-}
-
-.NameBox {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: NameBox;
-}
-
-.InfBox {
-
-  justify-self: stretch;
-  align-self: stretch;
-  grid-area: InfBox;
-}
 
 
 /***************** CONTAINER PUBLICATIONS (EVENTS, GALERY, PUBLICS, HISTORIAL) *****************/
@@ -326,8 +266,182 @@ body{
   }
 }
 
-/************* *************/
+.Avatar-img {
+  width: 50%;
+  border-radius: 100%;
+  border-width: 5px;
+  border-color: rgb(34, 100, 13);
+  border-style: solid;
+}
 
-/************* *************/
+.Interests-Box img {
+  width: 20%;
+  border-radius: 100%;
+  border-width: 2px;
+  border-color: rgb(34, 100, 13);
+  border-style: solid;
+}
 
-/************* *************/
+/***************** ******************/
+
+.HomeBox {
+  display: grid;
+  grid-template-columns: 0.4fr 0.4fr 2.6fr;
+  grid-template-rows:  0.3fr 0.7fr 0.2fr 0.4fr 0.3fr;
+  gap: 0% 0%;
+  grid-auto-flow: row dense;
+  justify-content: stretch;
+  align-content: stretch;
+  justify-items: stretch;
+  align-items: stretch;
+  grid-template-areas:
+    "UserName UserName Publications"
+    "Avatar Avatar Publications"
+    "User Country Publications"
+    "Bio Bio Publications"
+    "Interests Interests Publications";
+  height: 700px;
+}
+
+.UserName { 
+  grid-area: UserName; 
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.Avatar { 
+  grid-area: Avatar;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.User { 
+  grid-area: User; 
+  display: flex;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Country { 
+  grid-area: Country; 
+  display: flex;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Bio { 
+  grid-area: Bio; 
+  display: flex;
+    text-align: justify;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Interests { 
+  grid-area: Interests; 
+  display: flex;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Publications { 
+  grid-area: Publications; 
+}
+
+
+@media screen and (max-width: 600px) {
+  .HomeBox {
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr 1.7fr;
+    grid-template-rows: 0.4fr 1.5fr 0.2fr 1.5fr 1.1fr;
+    gap: 0% 0%;
+    grid-auto-flow: row dense;
+    justify-content: stretch;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-areas:
+      "UserName UserName UserName"
+      "Avatar Avatar Bio"
+      "User Country Interests"
+      "Publications Publications Publications"
+      "Publications Publications Publications";
+      height: 600px;
+  }
+  
+  .UserName { 
+    grid-area: UserName; 
+    background-color: rgb(21, 92, 39);
+    
+  }
+  
+  .Avatar { 
+    grid-area: Avatar;
+    background-color: rgb(163, 190, 62); 
+  }
+  
+  .User { 
+    grid-area: User; 
+    background-color: rgb(168, 21, 21);
+  }
+  
+  .Country { 
+    grid-area: Country; 
+    background-color: rgb(86, 90, 23);
+  }
+  
+  .Bio { 
+    grid-area: Bio; 
+    background-color: rgb(214, 20, 62);
+  }
+  
+  .Interests { 
+    grid-area: Interests; 
+    background-color: rgb(92, 21, 74);
+  }
+  
+  .Publications { 
+    grid-area: Publications; 
+    background-color: rgb(52, 148, 177);
+  }
+  .Avatar-img {
+    width: 80%;
+    border-radius: 100%;
+    border-width: 5px;
+    border-color: rgb(34, 100, 13);
+    border-style: solid;
+  }
+  
+  .Interests-Box img {
+    width: 10%;
+    border-radius: 100%;
+    border-width: 2px;
+    border-color: rgb(34, 100, 13);
+    border-style: solid;
+  }
+}
+
+/******** *********/
+
+
+
+
+
+
+
+
+
+
+

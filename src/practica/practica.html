@@ -60,35 +60,54 @@
 
     <main>
       <!-- HOME PAGE -->
-      <section id="Home" class="HomeBox Box">
+      <section id="Home" class="Box">
 
-        <!-- PROFILE CONTAINER -->
-        <div class="ProfileBox">
-          <div class="ProfileBox-Box">
-            <div class="NameBox"></div>
-            <div class="InfBox"></div>
+        <div class="HomeBox">
+          <div class="UserName">
+            <h1>USER NAME</h1>
           </div>
-        </div>
+          <div class="Avatar">
+            <img class="Avatar-img" src="/src/img/Avatares/Animals/AvatarA7.png" alt="Avatar Profile">
+          </div>
+          <div class="User">
+            <h5>User</h5>
+            <p>@User165</p>
+          </div>
+          <div class="Country">
+            <h5>Country</h5>
+            <p>Italia</p>
+          </div>
+          <div class="Bio">
+            <h3>Biography:</h3>
+            <p>fgdfgdfgdfgdfgdfgdfgfgdfgdgdfgdfgdfgdfgdfgdfgdgdgdfgdgdgdfgdfg</p>
+          </div>
+          <div class="Interests">
+            <h3>
+              Interests:
+            </h3>
+            <div class="Interests-Box">
+              <img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt="">
+              <img src="/src/img/Intereses/InteresesCN/SiembraCN.png" alt="">
+              <img src="/src/img/Intereses/InteresesCN/ReciclajeCN.png" alt="">
+            </div>
+          </div>
+          <div class="Publications">
 
-        <!-- PUBLICATIONS BOX  -->
-        <div class="PublicationsBox">
-          <!--  NAV PUBLICATION CONTAINER  -->
-          <nav class="nav-Publications">
-            <button class="tablink" onclick="openBoxPublication('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">
-              <img src="/src/img/Icons/WhiteBorder/Notice.png" alt="Notice">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('events', this, 'rgb(28, 70, 99)')">
-              <img src="/src/img/Icons/WhiteBorder/Event1.png" alt="Events">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('galery', this, 'rgb(102, 74, 31)')">
-              <img src="/src/img/Icons/WhiteBorder/Galery1.png" alt="Galery">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('historial', this, 'rgb(172, 35, 35)')">
-              <img src="/src/img/Icons/WhiteBorder/Heart.png" alt="Heart">
-            </button>
-          </nav>
+            <nav class="nav-Publications">
+              <button class="tablink" onclick="openBoxPublication('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">
+                <img src="/src/img/Icons/WhiteBorder/Notice.png" alt="Notice">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('events', this, 'rgb(28, 70, 99)')">
+                <img src="/src/img/Icons/WhiteBorder/Event1.png" alt="Events">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('galery', this, 'rgb(102, 74, 31)')">
+                <img src="/src/img/Icons/WhiteBorder/Galery1.png" alt="Galery">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('historial', this, 'rgb(172, 35, 35)')">
+                <img src="/src/img/Icons/WhiteBorder/Heart.png" alt="Heart">
+              </button>
+            </nav>
 
-            <!-- PUBLICATION CONTAINER SECTIONS -->
             <div id="publications" class="tabcontent"><br>
               <h1>PUBLICATIONS PUBLIC</h1>
               <p>All publications</p>
@@ -108,22 +127,22 @@
               <h1>HISTORIAL</h1>
               <p>All likes</p>
             </div>
-            
-            <!--  FOOTER PUBLICATION CONTAINER  -->
+
             <footer class="footer-Publications">
-            <button class="tablink" onclick="openBoxPublication('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">
-              <img src="/src/img/Icons/WhiteBorder/Notice.png" alt="Notice">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('events', this, 'rgb(28, 70, 99)')">
-              <img src="/src/img/Icons/WhiteBorder/Event1.png" alt="Events">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('galery', this, 'rgb(102, 74, 31)')">
-              <img src="/src/img/Icons/WhiteBorder/Galery1.png" alt="Galery">
-            </button>
-            <button class="tablink" onclick="openBoxPublication('historial', this, 'rgb(172, 35, 35)')">
-              <img src="/src/img/Icons/WhiteBorder/Heart.png" alt="Heart">
-            </button>
-          </footer>
+              <button class="tablink" onclick="openBoxPublication('publications', this, 'rgb(26, 77, 33)')" id="defaultOpen">
+                <img src="/src/img/Icons/WhiteBorder/Notice.png" alt="Notice">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('events', this, 'rgb(28, 70, 99)')">
+                <img src="/src/img/Icons/WhiteBorder/Event1.png" alt="Events">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('galery', this, 'rgb(102, 74, 31)')">
+                <img src="/src/img/Icons/WhiteBorder/Galery1.png" alt="Galery">
+              </button>
+              <button class="tablink" onclick="openBoxPublication('historial', this, 'rgb(172, 35, 35)')">
+                <img src="/src/img/Icons/WhiteBorder/Heart.png" alt="Heart">
+              </button>
+            </footer> 
+          </div>
         </div>
 
       </section>

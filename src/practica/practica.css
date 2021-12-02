@@ -23,6 +23,12 @@ body{
   font-family: Roboto;
 }
 
+main {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.87)), url("/src/img/Photos/img-10.jpg");
+  background-size: cover;
+  height: 800px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -82,7 +88,7 @@ body{
 }
 
 
-
+/************* HEADER  RESPONSIVE*************/
 
 
 @media (max-width: 768px) {
@@ -184,17 +190,24 @@ body{
   }
 }
 
-/************* PAGES COLOR *****************/
+/************* PAGES GENERALS*****************/
 
-.Box {
-  height: 500px;
+#Search {
+  background-color: greenyellow;
+  height: 800px;
 }
-
-#Home {background-color;}
-#Search {background-color: greenyellow;}
-#EditProfile {background-color:  blueviolet;}
-#AboutUs {background-color: brown;}
-#SignOut {background-color: skyblue;}
+#EditProfile {
+  background-color:  rgb(50, 88, 172);
+  height: 800px;
+}
+#AboutUs {
+  background-color: brown;
+  height: 800px;
+}
+#SignOut {
+  background-color: rgb(206, 133, 24);
+  height: 800px;
+}
 
 
 /***************** CONTAINER PUBLICATIONS (EVENTS, GALERY, PUBLICS, HISTORIAL) *****************/
@@ -251,6 +264,10 @@ body{
 .nav-Publications img {
   width: 15%;
 }
+
+
+/***************** CONTAINER PUBLICATIONS (EVENTS, GALERY, PUBLICS, HISTORIAL) RESPONSIVE *****************/ 
+
 @media screen and (max-width: 600px) {
   .nav-Publications {
     display: none;
@@ -282,12 +299,29 @@ body{
   border-style: solid;
 }
 
-/***************** ******************/
+.linea2 {
+  margin: 0rem 1rem;
+  width: 100%;
+  border-top:0.03rem solid #999;
+  position: relative;
+}
+
+.Avatar {
+  display: flex;
+  flex-direction: column;
+}
+
+.UserName {
+  display: flex;
+  flex-direction: column;
+  
+}
+/***************** PAGE HOME GRID ******************/
 
 .HomeBox {
   display: grid;
   grid-template-columns: 0.4fr 0.4fr 2.6fr;
-  grid-template-rows:  0.3fr 0.7fr 0.2fr 0.4fr 0.3fr;
+  /* grid-template-rows:  0.3fr 0.7fr 0.2fr 0.4fr 0.3fr; */
   gap: 0% 0%;
   grid-auto-flow: row dense;
   justify-content: stretch;
@@ -309,7 +343,7 @@ body{
   text-align: center;
   align-items: center;
   justify-content: center;
-  
+  justify-content: space-evenly;
 }
 
 .Avatar { 
@@ -318,6 +352,7 @@ body{
   text-align: center;
   align-items: center;
   justify-content: center;
+  justify-content: space-between;
 }
 
 .User { 
@@ -327,6 +362,8 @@ body{
     align-items: start;
     justify-content: center;
     flex-direction: column;
+    padding-left: 15%;
+    line-height: 160%;
 }
 
 .Country { 
@@ -336,6 +373,8 @@ body{
     align-items: start;
     justify-content: center;
     flex-direction: column;
+    padding-left: 18%;
+    line-height: 160%;
 }
 
 .Bio { 
@@ -347,6 +386,15 @@ body{
     flex-direction: column;
 }
 
+.Bio h3 {
+  margin: 0 0 5% 8%;
+}
+
+.Bio p {
+  margin: 0 8% 5% 8%;
+}
+
+
 .Interests { 
   grid-area: Interests; 
   display: flex;
@@ -356,16 +404,21 @@ body{
     flex-direction: column;
 }
 
+.Interests h3 {
+  margin: 0 0 5% 8%;
+}
+
 .Publications { 
   grid-area: Publications; 
 }
 
+/***************** PAGE HOME GRID RESPONSIVE ******************/
 
 @media screen and (max-width: 600px) {
   .HomeBox {
     display: grid;
-    grid-template-columns: 0.4fr 0.6fr 1.7fr;
-    grid-template-rows: 0.4fr 1.5fr 0.2fr 1.5fr 1.1fr;
+    grid-template-columns: 0.5fr 0.5fr 1.7fr;
+    /* grid-template-rows: 0.4fr 1.5fr 0.2fr 1.5fr 1.1fr; */
     gap: 0% 0%;
     grid-auto-flow: row dense;
     justify-content: stretch;
@@ -381,41 +434,46 @@ body{
       height: 600px;
   }
   
+  .HomeBox h3 {
+    font-size: small;
+  }
+
+  .HomeBox p {
+    font-size: small;
+  }
+
   .UserName { 
-    grid-area: UserName; 
-    background-color: rgb(21, 92, 39);
-    
+    grid-area: UserName;  
+    height: 80px;   
   }
   
   .Avatar { 
-    grid-area: Avatar;
-    background-color: rgb(163, 190, 62); 
+    grid-area: Avatar; 
   }
   
   .User { 
     grid-area: User; 
-    background-color: rgb(168, 21, 21);
+    align-items: end;
   }
   
   .Country { 
     grid-area: Country; 
-    background-color: rgb(86, 90, 23);
+    align-items: end;
   }
   
   .Bio { 
     grid-area: Bio; 
-    background-color: rgb(214, 20, 62);
   }
   
   .Interests { 
     grid-area: Interests; 
-    background-color: rgb(92, 21, 74);
+    padding-bottom: 5%;
   }
   
   .Publications { 
     grid-area: Publications; 
-    background-color: rgb(52, 148, 177);
   }
+
   .Avatar-img {
     width: 80%;
     border-radius: 100%;
@@ -425,15 +483,19 @@ body{
   }
   
   .Interests-Box img {
-    width: 10%;
+    width: 20%;
     border-radius: 100%;
     border-width: 2px;
     border-color: rgb(34, 100, 13);
     border-style: solid;
   }
+
+  .Avatar .linea2 {
+    display: none;
+  }
 }
 
-/******** *********/
+
 
 
 

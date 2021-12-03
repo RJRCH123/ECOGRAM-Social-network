@@ -26,7 +26,7 @@ body{
 main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.87)), url("/src/img/Photos/img-10.jpg");
   background-size: cover;
-  height: 800px;
+  height: 1000px;
 }
 
 .nav {
@@ -200,10 +200,7 @@ main {
   background-color:  rgb(50, 88, 172);
   height: 800px;
 }
-#AboutUs {
-  background-color: brown;
-  height: 800px;
-}
+
 #SignOut {
   background-color: rgb(206, 133, 24);
   height: 800px;
@@ -495,7 +492,75 @@ main {
   }
 }
 
+/************ ABOUS PAGE ***********/
 
+#AboutUs {
+  background-color: rgb(255, 255, 255);
+  height: 1000px;
+  margin: 0 20%;
+}
+
+.AboutUsText {
+  padding: 0 5% 3% 5%;
+} 
+
+#AboutUs h1 {
+  color: rgb(9, 54, 9);
+  font-size: large;
+}
+
+#AboutUs h3 {
+  color: rgb(9, 54, 9);
+  font-size: medium;
+}
+
+#AboutUs p {
+  color: rgb(0, 0, 0);
+  font-size: small;
+}
+
+#AboutUs ul {
+  color: rgb(0, 0, 0);
+  font-size: small;
+}
+
+
+.LogoLargeDiv {
+  text-align: center;
+}
+
+.LogoLarge {
+  width: 100%;
+}
+
+.FounderImg {
+  text-align: center;
+}
+
+.FounderImg img {
+  width: 50%;
+}
+
+.FounderRedSocial-Box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.FounderRedSocial-Box1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.FRS-div1 {
+  display: flex;
+}
+
+.RedSocialContainerImg {
+  margin: 8% 5%;
+  border-radius: 50%;
+  background-color: rgb(15, 102, 15);
+  text-align: center;
+}
 
 
 

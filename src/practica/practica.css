@@ -280,8 +280,108 @@ main {
   }
 }
 
+
+
+
+/***************** PAGE HOME GRID ******************/
+
+.HomeContainer {
+  display: flex;
+}
+
+.HomeBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.3fr 1.1fr 1.6fr;
+  grid-auto-columns: 1fr;
+  gap: 0% 0%;
+  grid-auto-flow: row dense;
+  justify-content: center;
+  align-content: stretch;
+  justify-items: center;
+  align-items: stretch;
+  grid-template-areas:
+    "UserName UserName"
+    "Avatar Bio"
+    "Inf Interests";
+}
+
+.UserName {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: UserName;
+}
+
+.Avatar {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: Avatar;
+  grid-area: Avatar;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.Avatar {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.UserName {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  
+}
+.linea2 {
+  margin: 0rem 1rem;
+  width: 100%;
+  border-top:0.03rem solid #999;
+  position: relative;
+}
+
+.Bio {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: Bio;
+  display: flex;
+    text-align: justify;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Inf {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: Inf;
+  display: flex;
+  flex-direction: column;
+}
+
+.Interests {
+
+  justify-self: stretch;
+  align-self: stretch;
+  grid-area: Interests;
+  display: flex;
+  flex-direction: column;
+}
+
 .Avatar-img {
-  width: 50%;
+  width: 80%;
   border-radius: 100%;
   border-width: 5px;
   border-color: rgb(34, 100, 13);
@@ -295,46 +395,27 @@ main {
   border-color: rgb(34, 100, 13);
   border-style: solid;
 }
-
-.linea2 {
-  margin: 0rem 1rem;
-  width: 100%;
-  border-top:0.03rem solid #999;
-  position: relative;
-}
-
-.Avatar {
+.Country { 
+  grid-area: Country; 
   display: flex;
-  flex-direction: column;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 160%;
 }
-
-.UserName {
+.Publications { 
+  height: 100%;
+  background-color: rgb(252, 252, 252);
   display: flex;
-  flex-direction: column;
-  
 }
-/***************** PAGE HOME GRID ******************/
-
-.HomeBox {
-  display: grid;
-  grid-template-columns: 0.4fr 0.4fr 2.6fr;
-  /* grid-template-rows:  0.3fr 0.7fr 0.2fr 0.4fr 0.3fr; */
-  gap: 0% 0%;
-  grid-auto-flow: row dense;
-  justify-content: stretch;
-  align-content: stretch;
-  justify-items: stretch;
-  align-items: stretch;
-  grid-template-areas:
-    "UserName UserName Publications"
-    "Avatar Avatar Publications"
-    "User Country Publications"
-    "Bio Bio Publications"
-    "Interests Interests Publications";
-  height: 700px;
+.PublicationsContent {
+  background-color: gray;
 }
-
-.UserName { 
+.SliderNews {
+  background-color: black;
+}
+/* .UserName { 
   grid-area: UserName; 
   display: flex;
   text-align: center;
@@ -404,10 +485,8 @@ main {
 .Interests h3 {
   margin: 0 0 5% 8%;
 }
+ */
 
-.Publications { 
-  grid-area: Publications; 
-}
 
 /***************** PAGE HOME GRID RESPONSIVE ******************/
 
@@ -471,21 +550,7 @@ main {
     grid-area: Publications; 
   }
 
-  .Avatar-img {
-    width: 80%;
-    border-radius: 100%;
-    border-width: 5px;
-    border-color: rgb(34, 100, 13);
-    border-style: solid;
-  }
   
-  .Interests-Box img {
-    width: 20%;
-    border-radius: 100%;
-    border-width: 2px;
-    border-color: rgb(34, 100, 13);
-    border-style: solid;
-  }
 
   .Avatar .linea2 {
     display: none;

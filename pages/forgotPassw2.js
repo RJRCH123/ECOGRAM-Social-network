@@ -4,7 +4,7 @@ export default () => {
       <div class="BoxLogin">
         <div class="BoxWelcome1">
           <div class="Logo1">
-            <img src="Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
+            <img src="LogoG1.png" class="logoSignIn" alt="logoKMS" />
           </div>
           <br>
           <p class="text-home">

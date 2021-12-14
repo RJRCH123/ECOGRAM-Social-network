@@ -95,7 +95,7 @@ const forgotPass = () => {
       <div class="BoxLogin">
         <div class="BoxWelcome1">
             <div class="Logo1">
-                <img src="Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
+                <img src="LogoG1.png" class="logoSignIn" alt="logoKMS" />
             </div>
             <br>
             <p class="text-home">
@@ -117,16 +117,16 @@ const forgotPass = () => {
                 <div class="clearfix clearfixForgotPass" id="clearfix clearfixForgotPass">
                     <input class="inputSignIn inputSignInForgotPass" id="email" type="text" placeholder="Enter your email" name="uname" required/>
                     <div id="modalCheckP" class="modalCheckP">
-                      <img src="Icons/Verify.png" class="CheckP" alt="sent email" />
+                      <img src="Verify.png" class="CheckP" alt="sent email" />
                       <p>
                       A verification email has just been sent to complete your password change.</p> 
                     </div>
                     <div id="modalCheckPA" class="modalCheckPA">
-                      <img src="Icons/Alert2.png" class="AlertP" alt="Alert" />
+                      <img src="Alert2.png" class="AlertP" alt="Alert" />
                       <p>You need to write a valid email.</p> 
                     </div>
                     <div id="modalErrorMessage" class="modalErrorMessage">
-                      <img src="Icons/Alert2.png" class="AlertP" alt="Alert" />
+                      <img src="Alert2.png" class="AlertP" alt="Alert" />
                       <p id="errormessage"> Error </p>
                     </div>
                     <button type="submit" id="btn-signin-signin" class="Loginbtn LoginbtnForgotPass"><a href="#/forgotPassw2">Continue</a></button>

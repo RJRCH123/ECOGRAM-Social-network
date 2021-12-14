@@ -105,7 +105,7 @@ const SignUp = () => {
   <div class="BoxSignUp">
     <div class="BoxWelcome1">
         <div class="Logo1">
-            <img src="Logos/LogoG1.png" class="logoSignUp" alt="logoKMS" />
+            <img src="LogoG1.png" class="logoSignUp" alt="logoKMS" />
         </div>
         <br>
         <p class="text-home">
@@ -175,15 +175,15 @@ const SignUp = () => {
             <button type="submit" id="btn-welcome-signup" id="signup" class="signupbtn">Sign Up</button>
           </div>
           <div id="modalSignUp" class="modalSignUp">
-            <img src="Icons/Alert2.png" class="Alert" alt="Alert" />
+            <img src="Alert2.png" class="Alert" alt="Alert" />
             <p id="errormessage"> Error </p>
           </div>
           <div id="modalCheck" class="modalCheck">
-            <img src="Icons/Verify.png" class="Check" alt="User Created" />
+            <img src="Verify.png" class="Check" alt="User Created" />
             <p id="CheckMessage"> Your username was created successfully. Check your email.</p>
           </div>
           <div id="modalName" class="modalName">
-            <img src="Icons/Alert2.png" class="Alert" alt="You need enter your name" />
+            <img src="Alert2.png" class="Alert" alt="You need enter your name" />
             <p id="nameMessage"> Required your name </p>
           </div><hr>
           </div> 

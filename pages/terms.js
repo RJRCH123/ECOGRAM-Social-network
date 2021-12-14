@@ -52,7 +52,7 @@ const Terms = () => {
         </li><br> 
       </ul>
       <div class="logoTerms">
-      <img src="Logos/LogoG8.png" alt="ECOGRAM"/>
+      <img src="LogoG8.png" alt="ECOGRAM"/>
       </div>
     </div>
   </div>

@@ -64,7 +64,7 @@ const Home = () => {
         <div class='UserName'>
         </div>
         <div class='Avatar'>
-          <img class='Avatar-img' src='Avatares/Animals/AvatarA7.png' alt='Avatar Profile'><br>
+          <img class='Avatar-img' src='AvatarA7.png' alt='Avatar Profile'><br>
           <div class='linea2'>&nbsp;</div>
         </div>
         <div class='Bio'>
@@ -87,9 +87,9 @@ const Home = () => {
             Interests:
           </h3><br>
           <div class='Interests-Box'>
-            <img src='Intereses/InteresesCN/AnimalCN.png' alt=''>
-            <img src='Intereses/InteresesCN/SiembraCN.png' alt=''>
-            <img src='Intereses/InteresesCN/ReciclajeCN.png' alt=''>
+            <img src='AnimalCN.png' alt=''>
+            <img src='SiembraCN.png' alt=''>
+            <img src='ReciclajeCN.png' alt=''>
           </div>
         </div>
       </div>
@@ -97,14 +97,14 @@ const Home = () => {
       <div id='publications' class='Publications'>
         <div class='PublicationsContent'>
           <div class='btnPublic'>
-            <img id="NewPost" class="NewPost" src='Icons/WhiteBorder/PlusCircle1.png' alt='Nex Publication'>
+            <img id="NewPost" class="NewPost" src='PlusCircle1.png' alt='Nex Publication'>
           </div>
           <div class='boxPublic'>
           <div id='boxPublications'class='NoneboxPublications'>
             <div class='boxPhotoandName'>
               <div class='boxInternoPhotoandName'>
                 <div class='photoPerfil'>
-                  <img src='Avatares/Animals/AvatarA7.png' alt=''>
+                  <img src='AvatarA7.png' alt=''>
                 </div>
                 <div class="userNamePublication">
 
@@ -130,23 +130,23 @@ const Home = () => {
           <div class='NewsContainer'>
             
             <div class='News'>
-              <img src='Notice/notice3.jpg'>
+              <img src='notice3.jpg'>
               <h2>COP26: Women are the most affected by climate change</h2>
               <a href='https://news.un.org/es/story/2021/11/1499772' target='_blank'>See more</a>
             </div><br>
             <div class='News'>
-              <img src='Notice/notice2.jpg'>
+              <img src='notice2.jpg'>
               <h2>
               The era of fossil fuel-powered cars in the spotlight at COP26</h2>
               <a href='https://news.un.org/es/story/2021/11/1499832' target='_blank'>See more</a>
             </div><br>
             <div class='News'>
-              <img src='Notice/notice1.jpg'>
+              <img src='notice1.jpg'>
               <h2>COP26: Promises 'ring hollow' when fossil fuels continue to receive trillions in subsidies, says Guterres</h2>
               <a href='https://news.un.org/es/story/2021/11/1499902' target='_blank'>See more</a>
             </div><br>
             <div class='News'>
-              <img src='Notice/notice5.jpg'>
+              <img src='notice5.jpg'>
               <h2>Panela, a sweet bet for the indigenous people to continue living in the Sierra de Colombia</h2>
               <a href='https://news.un.org/es/story/2021/11/1500632' target='_blank'>See more</a>
             </div> <br>
@@ -234,7 +234,7 @@ const Home = () => {
             <div class='boxPhotoandNameN'>
               <div class='boxInternoPhotoandNameN'>
                 <div class='photoPerfilN'>
-                  <img src='Avatares/Animals/AvatarA7.png' alt=''>
+                  <img src='AvatarA7.png' alt=''>
                 </div>
 
                 <div class="userNameN">
@@ -242,7 +242,7 @@ const Home = () => {
                 </div>
               </div>
             <div class='delete'>
-            <button id='btnDelete' class='btnDelete' data-ref='${idPublication}'><img src='Icons/Delete.png' alt=''></button>
+            <button id='btnDelete' class='btnDelete' data-ref='${idPublication}'><img src='Delete.png' alt=''></button>
             </div>
           </div>
             <div class='publicationN'>
@@ -250,7 +250,7 @@ const Home = () => {
             </div>
             <div class='saveN'>
               <p>2</p>
-              <img src='Icons/WhiteTotal/Heart2.png' alt=''>
+              <img src='Heart2.png' alt=''>
             </div>
           </div>`;
 

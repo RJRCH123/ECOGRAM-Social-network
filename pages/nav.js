@@ -23,24 +23,24 @@ const NavHome = () => {
   const viewNav = ` <nav class="nav">
 
       <a id="OpenDefault" href="#/home">
-        <img class="logo" src="Logos/LogoG8.png" alt="Ecogram"></a>
+        <img class="logo" src="LogoG8.png" alt="Ecogram"></a>
 
       <button class="NavToggle" id= "NavToggle" area-label="Open menu" >
-        <img class="MenuBar" src="Icons/WhiteBorder/Menu.png" alt="Menu">
+        <img class="MenuBar" src="Menu.png" alt="Menu">
       </button>
 
       <ul class="nav-menu nav-menu_visible"  data-animation="center">
 
         <li class="nav-menu-item">
           <a href="#/home" class="nav-menu-link nav-link">
-            <img src="Icons/WhiteBorder/Home1.png" alt="Home">
+            <img src="Home1.png" alt="Home">
             <p>Eco Home</p>
           </a>
         </li>
 
         <li class="nav-menu-item">
           <a  href="#/searchUser" class="nav-menu-link nav-link " >
-            <img src="Icons/WhiteBorder/Search1.png" alt="Search Users">
+            <img src="Search1.png" alt="Search Users">
             <p>Search User</p>
           </a>
         </li>
@@ -54,13 +54,13 @@ const NavHome = () => {
 
         <li class="nav-menu-item">
           <a href="#/about" class="nav-menu-link nav-link">
-            <img src="Icons/WhiteBorder/Inf1.png" alt="About Us">
+            <img src="Inf1.png" alt="About Us">
             <p>About Us</p>
           </a>
         </li>
         <li id="signOutbtn" class="nav-menu-item">
           <a class="nav-menu-link nav-link">
-            <img src="Icons/WhiteBorder/SignOut.png" alt="Sign Out">
+            <img src="SignOut.png" alt="Sign Out">
             <p>Sign Out</p>
           </a>
         </li>

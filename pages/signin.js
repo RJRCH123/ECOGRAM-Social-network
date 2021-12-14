@@ -75,7 +75,7 @@ const SignIn = () => {
     <div class="BoxLogin">
       <div class="BoxWelcome1">
         <div class="Logo1">
-            <img src="img/Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
+            <img src="Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
         </div>
         <br>
         <p class="text-home">
@@ -129,7 +129,7 @@ const SignIn = () => {
               
             </div>            
             <div id="modalSignIn" class="modalSignIn">
-              <img src="img/Icons/Alert2.png" class="Alert" alt="Alert" />
+              <img src="Icons/Alert2.png" class="Alert" alt="Alert" />
               <p id="errormessage"> Error </p>
             </div><hr>
             </div> 

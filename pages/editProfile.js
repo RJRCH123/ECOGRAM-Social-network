@@ -38,13 +38,13 @@ const EditProfile = () => {
             </div>
             <div class="profileAndInterest"></div>
             <div class="interests">
-              <img src="img/Intereses/InteresesCN/AnimalCN.png" alt="" />
-              <img src="img/Intereses/InteresesCN/SiembraCN.png" alt="" />
-              <img src="img/Intereses/InteresesCN/ReciclajeCN.png" alt="" />
+              <img src="Intereses/InteresesCN/AnimalCN.png" alt="" />
+              <img src="Intereses/InteresesCN/SiembraCN.png" alt="" />
+              <img src="Intereses/InteresesCN/ReciclajeCN.png" alt="" />
             </div>
             <div class="photoProfile">
               <img
-                src="img/Avatares/Animals/AvatarA7.png"
+                src="Avatares/Animals/AvatarA7.png"
                 alt=""
                 srcset=""
               />
@@ -77,84 +77,84 @@ const EditProfile = () => {
               <div id="photos" class="Box">
                   <div class="img0">
                     <img
-                    src="img/Avatares/Animals/AvatarA1.png"
+                    src="Avatares/Animals/AvatarA1.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img1">
                     <img
-                    src="img/Avatares/Animals/AvatarA2.png"
+                    src="Avatares/Animals/AvatarA2.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img2">
                     <img
-                    src="img/Avatares/Animals/AvatarA3.png"
+                    src="Avatares/Animals/AvatarA3.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img3">
                     <img
-                    src="img/Avatares/Animals/AvatarA4.png"
+                    src="Avatares/Animals/AvatarA4.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img4">
                     <img
-                    src="img/Avatares/Animals/AvatarA5.png"
+                    src="Avatares/Animals/AvatarA5.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img5">
                     <img
-                    src="img/Avatares/Animals/AvatarA6.png"
+                    src="Avatares/Animals/AvatarA6.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img6">
                     <img
-                    src="img/Avatares/Animals/AvatarA7.png"
+                    src="Avatares/Animals/AvatarA7.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img7">
                     <img
-                    src="img/Avatares/Animals/AvatarA8.png"
+                    src="Avatares/Animals/AvatarA8.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img8">
                     <img
-                    src="img/Avatares/Animals/AvatarA9.png"
+                    src="Avatares/Animals/AvatarA9.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img9">
                     <img
-                    src="img/Avatares/Animals/AvatarA10.png"
+                    src="Avatares/Animals/AvatarA10.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img10">
                     <img
-                    src="img/Avatares/Animals/AvatarA11.png"
+                    src="Avatares/Animals/AvatarA11.png"
                     alt=""
                     srcset=""
                   />
                   </div>
                   <div class="img11">
                     <img
-                    src="img/Avatares/Animals/AvatarA12.png"
+                    src="Avatares/Animals/AvatarA12.png"
                     alt=""
                     srcset=""
                   />
@@ -167,77 +167,77 @@ const EditProfile = () => {
               <div id="photos" class="Box">
                 <div class="img0">
                   <img
-                  src="img/Intereses/Agua.png"
+                  src="Intereses/Agua.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img1">
                   <img
-                  src="img/Intereses/Animal.png"
+                  src="Intereses/Animal.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img2">
                   <img
-                  src="img/Intereses/Clima.png"
+                  src="Intereses/Clima.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img3">
                   <img
-                  src="img/Intereses/Energia.png"
+                  src="Intereses/Energia.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img4">
                   <img
-                  src="img/Intereses/Energia2.png"
+                  src="Intereses/Energia2.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img5">
                   <img
-                  src="img/Intereses/Fabrica.png"
+                  src="Intereses/Fabrica.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img6">
                   <img
-                  src="img/Intereses/Oceanos.png"
+                  src="Intereses/Oceanos.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img7">
                   <img
-                  src="img/Intereses/Reciclaje.png"
+                  src="Intereses/Reciclaje.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img8">
                   <img
-                  src="img/Intereses/ResiduosTóxicos.png"
+                  src="Intereses/ResiduosTóxicos.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img9">
                   <img
-                  src="img/Intereses/Siembra.png"
+                  src="Intereses/Siembra.png"
                   alt=""
                   srcset=""
                 />
                 </div>
                 <div class="img10">
                   <img
-                  src="img/Intereses/Tala.png"
+                  src="Intereses/Tala.png"
                   alt=""
                   srcset=""
                 />

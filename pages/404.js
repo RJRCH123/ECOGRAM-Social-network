@@ -3,7 +3,7 @@ export default () => {
   <div class='BoxErrorMon'>
   <hr> <br>
     <div class="Logo1"> 
-      <img src="img/Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
+      <img src="Logos/LogoG1.png" class="logoSignIn" alt="logoKMS" />
     </div>
     <div class='BoxErrorSon'>
       <h1>404 Error Page</h1>

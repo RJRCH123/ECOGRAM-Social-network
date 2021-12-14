@@ -58,97 +58,97 @@ const Home = () => {
   const viewHome = `
   <main>
     <!-- HOME PAGE -->
-    <section id='Home' class='Box Home'>
+    <section id="Home" class="Box Home">
 
-      <div class='HomeBox'>
-        <div class='UserName'>
+      <div class="HomeBox">
+        <div class="UserName">
         </div>
-        <div class='Avatar'>
-          <img class='Avatar-img' src='img/Avatares/Animals/AvatarA7.png' alt='Avatar Profile'><br>
-          <div class='linea2'>&nbsp;</div>
+        <div class="Avatar">
+          <img class="Avatar-img" src="img/Avatares/Animals/AvatarA7.png" alt="Avatar Profile"><br>
+          <div class="linea2">&nbsp;</div>
         </div>
-        <div class='Bio'>
+        <div class="Bio">
           <h3>Biography:</h3><br>
           <div>
             <p>Hola, soy amante del arte en reciclado. Hago muchas manualidades pro ambientales. Les invito a ver mi galeria. 🧮 </p>
           </div>
         </div>
-        <div class='Inf'>
-          <div class='Country'>
+        <div class="Inf">
+          <div class="Country">
             <h3>Country:</h3>
             <p>Italia</p>
           </div>
-          <div class='Email'>
+          <div class="Email">
 
           </div>
         </div>
-        <div class='Interests'>
+        <div class="Interests">
           <h3>
             Interests:
           </h3><br>
-          <div class='Interests-Box'>
-            <img src='img/Intereses/InteresesCN/AnimalCN.png' alt=''>
-            <img src='img/Intereses/InteresesCN/SiembraCN.png' alt=''>
-            <img src='img/Intereses/InteresesCN/ReciclajeCN.png' alt=''>
+          <div class="Interests-Box">
+            <img src="img/Intereses/InteresesCN/AnimalCN.png" alt="">
+            <img src="img/Intereses/InteresesCN/SiembraCN.png" alt="">
+            <img src="img/Intereses/InteresesCN/ReciclajeCN.png" alt="">
           </div>
         </div>
       </div>
 
-      <div id='publications' class='Publications'>
-        <div class='PublicationsContent'>
-          <div class='btnPublic'>
-            <img id="NewPost" class="NewPost" src='img/Icons/WhiteBorder/PlusCircle1.png' alt='Nex Publication'>
+      <div id="publications" class="Publications">
+        <div class="PublicationsContent">
+          <div class="btnPublic">
+            <img id="NewPost" class="NewPost" src="img/Icons/WhiteBorder/PlusCircle1.png" alt="Nex Publication">
           </div>
-          <div class='boxPublic'>
-          <div id='boxPublications'class='NoneboxPublications'>
-            <div class='boxPhotoandName'>
-              <div class='boxInternoPhotoandName'>
-                <div class='photoPerfil'>
-                  <img src='img/Avatares/Animals/AvatarA7.png' alt=''>
+          <div class="boxPublic">
+          <div id="boxPublications"class="NoneboxPublications">
+            <div class="boxPhotoandName">
+              <div class="boxInternoPhotoandName">
+                <div class="photoPerfil">
+                  <img src="img/Avatares/Animals/AvatarA7.png" alt="">
                 </div>
                 <div class="userNamePublication">
 
                 </div>
               </div>
             </div>
-            <div class='publication'>
-              <textarea name='comments' placeholder='Type something here...' id='texta2' clase='texta2'></textarea>
+            <div class="publication">
+              <textarea name="comments" placeholder="Type something here..." id="texta2" clase="texta2"></textarea>
             </div>
-            <div class='save'>
-              <button id='btnSave' class='btnSave'>SAVE</button>
-              <button id='btnCancel' class='btnCancel'>CANCEL</button>
+            <div class="save">
+              <button id="btnSave" class="btnSave">SAVE</button>
+              <button id="btnCancel" class="btnCancel">CANCEL</button>
             </div>
           </div>
-          <div id='publicado'>
+          <div id="publicado">
           </div>
         </div>
         </div>
-        <div class='SliderNews'>
-          <div class='TittleEcoNews'>
+        <div class="SliderNews">
+          <div class="TittleEcoNews">
             <h3> ECO NEWS </h3>
           </div>  
-          <div class='NewsContainer'>
+          <div class="NewsContainer">
             
-            <div class='News'>
-              <img src='img/Notice/notice3.jpg'>
+            <div class="News">
+              <img src="img/Notice/notice3.jpg">
               <h2>COP26: Women are the most affected by climate change</h2>
-              <a href='https://news.un.org/es/story/2021/11/1499772' target='_blank'>See more</a>
+              <a href="https://news.un.org/es/story/2021/11/1499772" target="_blank">See more</a>
             </div><br>
-            <div class='News'>
-              <img src='img/Notice/notice2.jpg'>
+            <div class="News">
+              <img src="img/Notice/notice2.jpg">
               <h2>
               The era of fossil fuel-powered cars in the spotlight at COP26</h2>
-              <a href='https://news.un.org/es/story/2021/11/1499832' target='_blank'>See more</a>
+              <a href="https://news.un.org/es/story/2021/11/1499832" target="_blank">See more</a>
             </div><br>
-            <div class='News'>
-              <img src='img/Notice/notice1.jpg'>
-              <h2>COP26: Promises 'ring hollow' when fossil fuels continue to receive trillions in subsidies, says Guterres</h2>
-              <a href='https://news.un.org/es/story/2021/11/1499902' target='_blank'>See more</a>
+            <div class="News">
+              <img src="img/Notice/notice1.jpg">
+              <h2>COP26: Promises "ring hollow" when fossil fuels continue to receive trillions in subsidies, says Guterres</h2>
+              <a href="https://news.un.org/es/story/2021/11/1499902" target="_blank">See more</a>
             </div><br>
-            <div class='News'>
-              <img src='img/Notice/notice5.jpg'>
+            <div class="News">
+              <img src="img/Notice/notice5.jpg">
               <h2>Panela, a sweet bet for the indigenous people to continue living in the Sierra de Colombia</h2>
-              <a href='https://news.un.org/es/story/2021/11/1500632' target='_blank'>See more</a>
+              <a href="https://news.un.org/es/story/2021/11/1500632" target="_blank">See more</a>
             </div> <br>
           </div> 
         </div>
@@ -230,27 +230,27 @@ const Home = () => {
     const divPublicado = containerHome.querySelector('#publicado');
     const publicationText = documentFirebase.data().publication;
     divPublicado.innerHTML += `
-          <div class='boxPublicationsN'>
-            <div class='boxPhotoandNameN'>
-              <div class='boxInternoPhotoandNameN'>
-                <div class='photoPerfilN'>
-                  <img src='img/Avatares/Animals/AvatarA7.png' alt=''>
+          <div class="boxPublicationsN">
+            <div class="boxPhotoandNameN">
+              <div class="boxInternoPhotoandNameN">
+                <div class="photoPerfilN">
+                  <img src="img/Avatares/Animals/AvatarA7.png" alt="">
                 </div>
 
                 <div class="userNameN">
                   <p>${data.name}</p>
                 </div>
               </div>
-            <div class='delete'>
-            <button id='btnDelete' class='btnDelete' data-ref='${idPublication}'><img src='img/Icons/Delete.png' alt=''></button>
+            <div class="delete">
+            <button id="btnDelete" class="btnDelete" data-ref="${idPublication}"><img src="img/Icons/Delete.png" alt=""></button>
             </div>
           </div>
-            <div class='publicationN'>
-              <div class='contentPublicationN'><p>${publicationText}</p></div>
+            <div class="publicationN">
+              <div class="contentPublicationN"><p>${publicationText}</p></div>
             </div>
-            <div class='saveN'>
+            <div class="saveN">
               <p>2</p>
-              <img src='img/Icons/WhiteTotal/Heart2.png' alt=''>
+              <img src="img/Icons/WhiteTotal/Heart2.png" alt="">
             </div>
           </div>`;
 

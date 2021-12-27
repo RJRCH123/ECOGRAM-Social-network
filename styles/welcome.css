@@ -5,7 +5,6 @@ body {
     url("../img/Photos/Gif1.gif");
   color: beige;
   background-size: cover;
-
 }
 
 a {
@@ -14,16 +13,16 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0px;
   background: rgba(0, 0, 0, 0.993);
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.795);
+  background: rgba(61, 55, 55, 0.795);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2db36075;
+  background: #24e26d75;
   border-radius: 10px;
 }
 

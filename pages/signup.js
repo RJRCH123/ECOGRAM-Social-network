@@ -2,15 +2,15 @@ import {
   createUserWithEmailAndPassword,
   auth,
   sendEmailVerification,
-  doc, setDoc, db,
+  doc, setDoc, db, provider, signInWithPopup,
 } from '../utils/firebaseconfig.js';
 
 // Add a new document in collection "users"
 async function createNewUser(name, email, uid) {
   await setDoc(doc(db, 'users', uid), {
-    uid: uid,
-    name: name,
-    email: email,
+    uid,
+    name,
+    email,
   });
 }
 
@@ -37,13 +37,17 @@ const cleanModal = () => {
       .classList.replace('alertMessageSignUp', 'modalSignUp');
   }
 };
-
+// envío de email para la verificación de correo registrado
 export const handleSenEmailVerification = () => {
   sendEmailVerification(auth.currentUser)
-    .then(() => {
+    .then((result) => {
+      console.log('result: ', result);
       // Email verification sent!
       // ...
       console.log('send email');
+    })
+    .catch(() => {
+      console.log('dont send email');
     });
 };
 
@@ -53,24 +57,13 @@ export const handleSingUp = (e) => {
   const email = e.target.closest('form').querySelector('#email').value;
   const password = e.target.closest('form').querySelector('#password').value;
 
-  console.log(name);
-
   if (name !== '') {
-    // alert(`Created User ${user}`);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Add new user
-        // Usar userCredential para crear un nuevo usuario y que el id sea el uid
-        // revisar en el caso de Google para la creacion del usuario
-        console.log('userCredential:', userCredential);
         const emailFS = userCredential.user.email;
         const uidFS = userCredential.user.uid;
         createNewUser(name, emailFS, uidFS);
-        // const user = userCredential.user;
-        // user.displayname = name;
-        // eslint-disable-next-line no-console
-        // console.log(user.displayname);
-        // eslint-disable-next-line no-alert
         cleanModal();
         // Print notification: User created
         document
@@ -81,23 +74,54 @@ export const handleSingUp = (e) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // eslint-disable-next-line no-console
         console.log('error en signup', errorMessage, errorCode);
-        // eslint-disable-next-line no-alert
-        // alert(`Notification: ${errorMessage}`);
+        // Print notification: error messeges
         cleanModal();
         document
           .getElementById('modalSignUp')
           .classList.replace('modalSignUp', 'alertMessageSignUp');
-
+        // Print text: error messages of Firebase
         document.getElementById('errormessage').innerHTML = errorCode;
       });
   } else if (name === '' || name == null) {
     cleanModal();
+    // Print notification: name incompleted
     document
       .getElementById('modalName')
       .classList.replace('modalName', 'alertmodalName');
   }
+};
+
+export const handleSingUpGoogle = (e) => {
+  e.preventDefault();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+      const user = result.user;
+      const name = user.displayName;
+      const email = user.email;
+      const uid = user.uid;
+      createNewUser(name, email, uid)
+        .then(() => {
+          cleanModal();
+          // Print notification: User created
+          document
+            .getElementById('modalCheck')
+            .classList.replace('modalCheck', 'alertmodalCheck');
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log('error en signup', errorMessage, errorCode);
+          // Print notification: error messeges
+          cleanModal();
+          document
+            .getElementById('modalSignUp')
+            .classList.replace('modalSignUp', 'alertMessageSignUp');
+          // Print text: error messages of Firebase
+          document.getElementById('errormessage').innerHTML = errorCode;
+        });
+    })
+    .catch(console.log('error en carga'));
 };
 
 const SignUp = () => {
@@ -173,6 +197,10 @@ const SignUp = () => {
           <p id="verify-message" class="verify-message"></p>
           <div class="clearfix">
             <button type="submit" id="btn-welcome-signup" id="signup" class="signupbtn">Sign Up</button>
+            <button type="submit" id="btn-signup-google" class="LoginGooglebtn">Sign Up with Google</button>
+          </div>
+          <div class="clearfix">
+
           </div>
           <div id="modalSignUp" class="modalSignUp">
             <img src="img/Icons/Alert2.png" class="Alert" alt="Alert" />
@@ -196,7 +224,7 @@ const SignUp = () => {
     </div>
   </div>
   `;
-  // <a type="submit" href="#/home">Send</a>
+
   const divElemt = document.createElement('div');
   divElemt.classList.add('position');
   divElemt.innerHTML = viewCatalogue;
@@ -204,7 +232,26 @@ const SignUp = () => {
   divElemt
     .querySelector('#btn-welcome-signup')
     .addEventListener('click', handleSingUp);
+
+  divElemt
+    .querySelector('#btn-signup-google')
+    .addEventListener('click', handleSingUpGoogle);
   return divElemt;
 };
 
 export default SignUp;
+
+export const actionCodeSettings = () => ({
+  url: 'katerint.github.io',
+  // This must be true.
+  handleCodeInApp: true,
+  iOS: {
+    bundleId: 'com.example.ios',
+  },
+  android: {
+    packageName: 'com.example.android',
+    installApp: true,
+    minimumVersion: '12',
+  },
+  dynamicLinkDomain: 'katerint.github.io',
+});

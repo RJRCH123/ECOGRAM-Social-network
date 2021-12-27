@@ -1,10 +1,10 @@
 /* **************SECCION DE PUBLICACIONES *****************/
-.Publications p,
+/* .Publications p,
 .PublicationsN p  {
   color: black;
   font-weight: bold;
   margin: 1rem;
-}
+} */
 
 .photoPerfil img,
 .photoPerfilN img {
@@ -27,12 +27,13 @@
   box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60%);
   margin: 1rem;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
+
 
 .boxPublicationsN {
   display: flex;
-  width: 80%;
+  /* width: 100%; */
   align-items: center;
   background: #ffffff;
   padding: 1rem;
@@ -61,25 +62,13 @@
   margin: 0.2rem;
   /* box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
   box-shadow:  1px 1px 2px 1px rgb(25 27 28 / 30%);
-
+  color: black;
+  font-weight: bold;
 }
 
-.save .btnCancel {
+.save .btnCancel,
+.btnCancelEdit {
   background-color: rgb(194, 53, 53);
-  width: 90px;
-  height: 100%;
-  border-radius: 10px;
-  color: white;
-  border: none;
-  cursor: pointer;
-  opacity: 0.9;
-  padding: 0.5rem;
-  margin: 2%;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-}
-
-.save .btnSave {
-  background-color: rgb(44, 45, 46);
   width: 100px;
   height: 100%;
   border-radius: 10px;
@@ -88,8 +77,33 @@
   cursor: pointer;
   opacity: 0.9;
   padding: 0.5rem;
-  margin: 2%;
-  box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60%);
+  margin: 0 1% 0 1%;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
+}
+
+.save .btnCancel:hover,
+.btnCancelEdit:hover {
+  background-color: rgb(146, 26, 26);
+}
+
+.save .btnSave:hover,
+.btnSaveEdit:hover {
+  background-color: rgb(44, 45, 46);
+}
+
+.save .btnSave,
+.btnSaveEdit {
+  background-color: rgb(126, 126, 126);
+  width: 100px;
+  height: 100%;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 0.5rem;
+  margin: 0 1% 0 1%;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
 }
 
 .publication,
@@ -106,17 +120,36 @@
 #publicadoN {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  width: 80%;
+  /* align-items: center;
+  width: 100%; */
   
 }
 
+.userNameN {
+  display: flex;
+  flex-direction: column;
+}
+.data {
+  display: flex;
+  color: black;
+  font-weight: bold;
+  margin-left: 1rem;
+}
 .contentPublicationN {
   overflow-wrap: break-word;
   background-color: #e6dece;
   border-radius: 10px;
   box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60%);
   text-align: justify;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  padding: 3%;
+  color: black;
+  overflow-y: visible;
+  font-weight: bold;
+  font-size: small;
 }
 
 .boxPhotoandName,
@@ -125,6 +158,7 @@
   justify-content: space-between;
   width: 100%;
 }
+
 
 .boxInternoPhotoandName,
 .boxInternoPhotoandNameN {
@@ -136,16 +170,22 @@
   /* width: 100%; */
   white-space: pre-line;
   font-size: small;
+  color: black;
+  font-weight: bold;
+  margin: 1rem;
 }
 
-.btnDelete { 
-  text-align: end;
-  width: 100%;
-  border-style: none;
-  background: none;
+.editPost {
+  display: flex;
+  justify-content: space-between;
+  /* visibility: visible; */
 }
-.btnDelete img {
-  width: 25%;
+
+.editPost img {
+  width: 20px;
+  height: 20px;
+  margin: 5%;
+  cursor: pointer;
 }
 
 .save p,
@@ -163,31 +203,151 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  font-size: small;
 }
 
 .saveN img {
-  width: 22%;
+  width: 30px;
+  height: 30px;
+}
+
+.modalCheckPost {
+  display: none;
+}
+
+.AlertmodalCheckPost {
+  color: #186e1d;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+  font-weight: bold;
+  font-size: small;
+}
+
+.AlertmodalCheckPost img {
+  width: 5%;
+  margin: 2%;
 }
 
 @media screen and (max-width: 760px) {
   .contentPublicationN p {
-    width: 227px;
+    /* width: 227px; */
     white-space: pre-line;
   }
 
   .btnPublic img {
     width: 10%;
-    margin: 3% 3% 0 0;
+    margin: 0 3% 0 0;
   }
   .PublicationsContentN {
     background-color: gray;
     width: 100%;
     padding-bottom: 10%;
 }
+.editPost img {
+  width: 20px;
+  height: 20px;
+  margin: 3%;
 }
 
+.btnAllPost, .btnMyPost {
+  padding: 2% 4%;
+}
 
+.save .btnCancel,
+.btnCancelEdit,
+.save .btnSave,
+.btnSaveEdit {
+  width: 50%;
+  font-size: small;
+}
+}
 
+/* Modal para cancelar post*/
 
+.btns {
+  display: flex;
+}
 
+.modal-contenido{
+  background-color:#ffffff;
+  width:100%;
+  margin: 20% auto;
+  position: relative;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 1rem;
+    /* box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em, rgb(0 0 0 / 25%) 0px 0.125em 0.5em, rgb(255 255 255 / 10%) 0px 0px 0px 1px inset; */
+  box-shadow: 1px 1px 2p rgb(25 27 28 / 60%);
+}
 
+#miModal:target{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.btnNo {
+  background-color: rgb(194, 53, 53);
+  width: 90px;
+  height: 100%;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 0.5rem;
+  margin: 2%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.btnYes {
+  background-color: rgb(68, 153, 42);
+  width: 90px;
+  height: 100%;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  padding: 0.5rem;
+  margin: 2%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.hide{
+  display: none !important;
+}
+
+.boxPhotoandName h2,
+.boxPhotoandNameN h2 {
+  color: black;
+  font-weight: bold;
+  margin: 0.5rem 0 0 1rem;
+  font-size: medium;
+}
+
+.userNameN p {
+  font-size: x-small;
+  color: rgb(32, 32, 32);
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.userNamePublication p {
+  color: black;
+  font-weight: bold;
+  margin: 1rem;
+  font-size: medium;
+}
+
+.FlexBoxEditbtns {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} 
+
+.btnsEditContainer {
+  display: flex;
+  justify-content: flex-start;
+}

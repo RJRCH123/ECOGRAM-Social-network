@@ -114,11 +114,16 @@ body {
   grid-area: Country; 
   display: flex;
   text-align: center;
+  flex-direction: column;
   line-height: 160%;
   padding:  2% 5%;
   font-size: small;
 }
 
+.countryImg {
+  display: flex;
+  justify-content: flex-start;
+}
 .Country h3 {
   margin-right: 5%;
 }
@@ -152,12 +157,28 @@ body {
   width: 100%;
 }
 
+.AddPhotoPostEdit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 5%;
+}
+
+.boxFlexbtnX{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .AddPhotoPost {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 15%;
   margin-left: 2%;
 }
+
 .AddPhotoPost img {
   width: 30%;
 }
@@ -167,6 +188,15 @@ body {
   height: 100%;
 }
 .inputFilePost {
+  position: absolute;
+  width: 2%;
+  height: 4%;
+  z-index: 10;
+  border-radius: 100%;
+  opacity: 0;
+}
+
+.inputFilePostEdit {
   position: absolute;
   width: 2%;
   height: 4%;
@@ -206,6 +236,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 2%;  
+  align-items: center;
 }
 
 .btnPublic input {
@@ -231,7 +262,6 @@ body {
     padding: 6px;
     opacity: 0.9;
     box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60%);
-    margin-right: 12px;
 }
 
 .SliderNews {
@@ -293,6 +323,7 @@ body {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  align-items: center;
 }
 
 .save img {
@@ -309,6 +340,66 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
+.btnsPublic {
+  display: flex;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 5%;
+}
+
+.flexFilterBtns {
+  gap: 5%;
+  display: flex;
+}
+
+.CountryFlex {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  /* flex-direction: column; */
+  gap: 2%;
+  margin-top: 2%;
+}
+
+/* .CountryFlex img {
+  width: 30px;
+  height: 30px;
+} */
+
+.btnDeleteImg,
+.btnDeteleImgEdit {
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  border: none;
+  color: beige;
+  background-color: #bf4040;
+  box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60%);
+  z-index: 1;
+  position: absolute;
+  margin-top: 1.5%;
+  /* margin: 2%; */
+}
+
+.btnDeleteImg:hover,
+.btnDeteleImgEdit:hover {
+  background-color: rgb(146, 26, 26);
+}
+
+.modalNoMoreTwoPost {
+  color: #d5e267;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3%;
+  font-weight: bold;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
 /***************** PAGE HOME GRID RESPONSIVE ******************/
 
 @media screen and (max-width: 760px) {
@@ -465,5 +556,33 @@ body {
   }
   .Avatar .linea2 {
     display: none;
+  }
+
+  .btnsPublic {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  .flexFilterBtns {
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    gap: 5%;
+  }
+
+  .btnPublic input {
+    margin-top: 5%;
+  }
+
+  .CountryFlex {
+    display: flex;
+  }
+
+  .btnDeleteImg {
+    width: 20px;
+    height: 20px;
+    margin: 4%;
+    font-size: x-small;
   }
 }

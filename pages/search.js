@@ -1,3 +1,8 @@
+/* eslint-disable func-names */
+/* eslint-disable no-use-before-define */
+/* eslint-disable prefer-const */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-extend-native */
 import {
   getDocs,
   collection,
@@ -6,12 +11,12 @@ import {
   where,
 } from '../utils/firebaseconfig.js';
 import { countries } from '../utils/countries.js';
-import { interests } from '../utils/interests.js';
+import { dataInterests } from '../utils/interests.js';
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
 // console.log(this.charAt(0).toUpperCase() + this.slice(1));
   return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 // Function - Get Users data from Firestore
 async function usersInFirestore() {
@@ -62,19 +67,19 @@ const Search = () => {
   // Filter
   async function filterUsers(key, divElem) {
     clearCards();
-    let filterInfo = divElem;
+    const filterInfo = divElem;
     let q = query(collection(db, 'users'));
 
     if (key == 'username') {
       console.log('filterInfo.value: ', filterInfo.value);
-      q = query(collection(db, 'users'), 
+      q = query(collection(db, 'users'),
         where('name', '>=', filterInfo.value.capitalize()),
-        where('name', '<=', filterInfo.value.capitalize()+ '\uf8ff'));
+        where('name', '<=', `${filterInfo.value.capitalize()}\uf8ff`));
     }
     if (key == 'country') {
       q = query(collection(db, 'users'), where('country', '==', filterInfo.value));
     }
-    if (key == 'interests'){
+    if (key == 'interests') {
       q = query(collection(db, 'users'), where('interests', 'array-contains', filterInfo.value));
     }
     const querySnapshot = await getDocs(q);
@@ -82,7 +87,7 @@ const Search = () => {
   }
 
   // Show input - filter Name
-  divInputName.addEventListener('keyup', () => {filterUsers('username', divInputName)});
+  divInputName.addEventListener('keyup', () => { filterUsers('username', divInputName); });
 
   // Show countries
   // eslint-disable-next-line no-restricted-syntax
@@ -91,17 +96,19 @@ const Search = () => {
     <option value='${prop}:${countries[prop]}'>
       ${countries[prop]}
     </option>`;
-  };
+  }
   divSelectCountry.addEventListener('change', () => { filterUsers('country', divSelectCountry); });
 
   // Show Select Interest
   // eslint-disable-next-line no-restricted-syntax
-  for (const prop in interests) {
+  for (const prop in dataInterests) {
     divSelectInterest.innerHTML += `
-    <option value='${interests[prop]}'>
+    <option value='${dataInterests[prop]}'>
       ${prop}
     </option>`;
-  };
+  }
+
+  // Select interest
   divSelectInterest.addEventListener('change', () => {
     // console.log('divSelectInterest:', divSelectInterest.value);
     filterUsers('interests', divSelectInterest);
@@ -110,26 +117,29 @@ const Search = () => {
   // Print Users -> for user
   function printDataUsers(data) {
     // console.log('data: ', data);
-    let dataUsers = data;
+    const dataUsers = data;
     dataUsers.forEach((doc) => {
-      // console.log(doc.id, ' => ', doc.data());
       // Print One User
-      let user, photo, fullname, country, interests;
+      let user; let photo; let fullname; let country; let interests; let bio;
       user = doc.data();
       photo = user.photo;
       fullname = user.name;
       country = user.country.split(':')[1];
       interests = user.interests;
-      printUser(photo, fullname, country, interests);
+      bio = user.bio;
+      printUser(photo, fullname, country, interests, bio);
     });
-    return;
   }
 
   // Print One card user
-  function printUser(photo, fullname, country, interests) {
+  function printUser(photo, fullname, country, interests, bio) {
     divCardUser.innerHTML += `
         <div class='search'>
-          <div class='perfil'><img class='imgPerfil' src='${photo}' alt=''></div>
+          <div class='perfil'>
+          <img class='imgPerfil' src='${photo}' alt=''>
+          <button id="btnSeeUserPost" class="btnSeeUserPost">
+            <a id="btnSeeUser" href="#/home" data-ref='${fullname}'>See Posts</a>
+          </button></div>
           <div class='caracteres'>
             <div class='nombre'>${fullname}</div>
             <div class='pais'>${country}</div>
@@ -138,10 +148,25 @@ const Search = () => {
               <div class='imgCaracteres'><img src='${interests[1]}' alt=''></div>
               <div class='imgCaracteres'><img src='${interests[2]}' alt=''></div>
             </div>
+            <div class='flexBtn'>
+              <p id="txtBioPost" class="txtBioPost">${bio}</p>
+            </div>
           </div>  
         </div>
   `;
-    return;
+
+    // Button See Post
+    const btnSeeUserPosts = divCardUser.querySelectorAll('#btnSeeUser');
+
+    btnSeeUserPosts.forEach((element) => {
+      element.addEventListener('click', (e) => {
+        let userSearch = e.target.dataset.ref;
+        let objName = {
+          name: `${userSearch}`,
+        };
+        sessionStorage.setItem('userSearch', (JSON.stringify(objName)));
+      });
+    });
   }
 
   // Users in Firestore and print

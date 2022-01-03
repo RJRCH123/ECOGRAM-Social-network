@@ -4,7 +4,7 @@ body.dark .PublicationsContent {
 }
 
 body.dark .boxPublications{
-  background: #191919;
+  background: #282828;
   box-shadow: 1px 1px 2px 1px rgb(101 106 109 / 60%);
 }
 
@@ -47,12 +47,39 @@ body.dark .btnAllPost,
 body.dark .btnMyPost,
 body.dark .NewPost {
   background-color: rgb(27 78 10);
+  box-shadow: 1px 1px 2px 1px rgb(8 8 8);
 }
 
-body.dark .editPost img {
+body.dark .btnAllPost:hover,
+body.dark .btnMyPost:hover,
+body.dark .NewPost:hover {
+  background-color: rgb(51, 119, 28);
+}
+
+body.dark .btnEditPost,
+body.dark .btnDelete {
   background-color: beige;
   padding: 5%;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
+}
+
+body.dark .inputFilePostIcon {
+  background-color: beige;
+  /* margin-top: 30%; */
+  padding: 15%;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+
+body.dark .AddPhotoPostEdit {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* width: 100%; */
+  /* height: 50%; */
 }
 
 body.dark .caracteres img,
@@ -62,8 +89,58 @@ body.dark .photoPerfil img {
   border-color: rgb(27 78 10);
 }
 
+body.dark .editPost img {
+  margin: 0 2%;
+}
+
+body.dark .AddPhotoPostEdit {
+  margin: 5% 11% 5% 5%;
+}
+
+body.dark #EditProfile {
+  background-color: #161515;
+}
+
 body.dark .AddPhotoPost img {
   background-color: beige;
-  padding: 5%;
+  /* padding: 5%; */
+  padding: 15%;
   border-radius: 100%;
+}
+body.dark .btnPublic{
+  background-color: #161515;
+}
+
+body.dark .bodyEditProfile,
+body.dark #selectPhoto,
+body.dark #selectInterest {
+  background-color: #2f2f2f;
+}
+
+@media screen and (max-width: 760px) {
+  body.dark .btnEditPost,
+  body.dark .btnDelete {
+    background-color: beige;
+    padding: 5%;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
+
+  body.dark .inputFilePostIcon {
+    background-color: beige;
+    /* margin-top: 30%; */
+    padding: 15%;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+  }
+
+  body.dark .editPost img {
+    margin: 0;
+  }
+
+  body.dark .AddPhotoPostEdit {
+    margin: 0 1%;
+  }
 }

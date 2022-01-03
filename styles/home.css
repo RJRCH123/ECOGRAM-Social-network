@@ -9,16 +9,11 @@
 }
 
 body {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.87)),
-    url("../img/Photos/Gif1.gif"); */
   color: beige;
   background-size: cover;
   font-family: 'Roboto', sans-serif;
 }
 
-/* .js-focus-visible {
-  height: 100%;
-} */
 /***************** PAGE HOME FLEX ******************/
 .Home {
   display: flex;
@@ -28,8 +23,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 20%;
-  /* box-shadow: inset 5px 5px 10px #000000,
-  inset -5px -5px 10px #000000; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
   url("../img/Photos/img-10.jpg");
   
@@ -59,13 +52,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  margin-top: 20%;
 }
 .linea2 {
   margin: 0rem 1rem;
   width: 100%;
   border-top:0.03rem solid #999;
-  position: relative;
+  position: static;
 }
 
 .Bio {
@@ -107,10 +100,9 @@ body {
 
 .Interests-Box img {
   width: 20%;
+  background-color: black;
   border-radius: 100%;
-  border-width: 2px;
-  border-color: rgb(34, 100, 13);
-  border-style: solid;
+  border: 2px solid rgb(34, 100, 13);
 }
 .Country { 
   grid-area: Country; 
@@ -177,7 +169,6 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  /* width: 15%; */
   margin-left: 2%;
 }
 
@@ -232,6 +223,7 @@ body {
 .btnMyPost:hover,
 .NewPost:hover {
   background-color: #3f3c3c;
+  transform: scale(1.1);
 }
 
 .btnMode {
@@ -240,11 +232,6 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-
-/* .btnMode button {
-  width: 100%;
-  height: 100%;
-} */
 
 .switch {
   background-color: gray;
@@ -294,24 +281,23 @@ body {
   left: unset;
 }
 
-
-/* .switch::after {
-  right: 0;
-  left: unset;
-} */
-
 .btnPublic {
   display: flex;
   justify-content: space-between;
-  margin: 2%;  
   align-items: center;
   gap: 2%;
-}
+  position: fixed;
+  padding: 1%;
+  width: 56%;
+  background-color: #c4c4c4;
+  top: 9%;
+} 
 
 .btnPublic input {
   border: none;
   padding: 6px;
   border-radius: 10px;
+  box-shadow: inset 5px 5px 10px #dcd4d4, inset -5px -5px 10px #d2d2d2;
 }
 .NewPost{
   width: 5%;
@@ -342,6 +328,7 @@ body {
   text-align: center;
   color: rgb(255, 255, 255);
   padding: 5%;
+  margin-top: 18%;
   background-color: rgb(28, 122, 33);
   box-shadow: inset 5px 5px 10px rgb(20, 92, 24),
   inset -5px -5px 10px rgb(9, 58, 11);
@@ -349,8 +336,6 @@ body {
 .NewsContainer{
   text-align: center;
   padding: 5%;
-  /* box-shadow: inset 5px 5px 10px #000000,
-  inset -5px -5px 10px #000000; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.87)),
   url("../img/Photos/img-5.jpg");
   
@@ -382,12 +367,7 @@ body {
   padding: 2% 7%;
   
 }
-/* .News {
-  border-width: 1px;
-  border-color: rgb(255, 255, 255);
-  border-style: solid;
-  padding: 7%;
-} */
+
 .save {
   display: flex;
   justify-content: flex-end;
@@ -408,6 +388,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 5%;
 }
 
 .btnsPublic {
@@ -428,15 +409,9 @@ body {
   width: 100%;
   justify-content: flex-start;
   align-items: center;
-  /* flex-direction: column; */
   gap: 2%;
   margin-top: 2%;
 }
-
-/* .CountryFlex img {
-  width: 30px;
-  height: 30px;
-} */
 
 .btnDeleteImg,
 .btnDeteleImgEdit {
@@ -451,7 +426,6 @@ body {
   z-index: 1;
   position: absolute;
   margin-top: 1.5%;
-  /* margin: 2%; */
 }
 
 .btnDeleteImg:hover,
@@ -467,6 +441,43 @@ body {
   margin-top: 3%;
   font-weight: bold;
   filter: drop-shadow(2px 4px 6px black);
+}
+
+.scrollUpContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15%;
+  opacity: 1;
+  visibility: visible;
+}
+
+.btnScrollTop {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #e2e2e2;
+  box-shadow: 1px 1px 2px 1px rgb(25 27 28 / 60);
+  transition: all .1s;
+  position: fixed;
+  z-index: 2;
+  margin-top: 4%;
+}
+
+.btnScrollTop:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btnScrollTop img {
+  width: 30px;
+  height: 30px;
+}
+
+.hideBtnUp {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /***************** PAGE HOME GRID RESPONSIVE ******************/
@@ -496,14 +507,13 @@ body {
       "Avatar Bio"
       "Inf Interests";
     width: 100%;
+    z-index: 3;
   }
   
   .UserName {
-  
     justify-self: stretch;
     align-self: stretch;
     grid-area: UserName;
-    
   }
 
   .Email { 
@@ -514,7 +524,6 @@ body {
     line-height: 160%;
   }
   .Avatar {
-  
     justify-self: stretch;
     align-self: stretch;
     grid-area: Avatar;
@@ -540,13 +549,13 @@ body {
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
-    
+    margin-top: 0;
   }
   .linea2 {
     margin: 0rem 1rem;
     width: 100%;
     border-top:0.03rem solid #999;
-    position: relative;
+    position: static;
   }
   
   .Bio {  
@@ -603,11 +612,11 @@ body {
   .Country { 
     grid-area: Country; 
     display: flex;
-      text-align: center;
-      align-items: start;
-      justify-content: center;
-      flex-direction: column;
-      line-height: 160%;
+    text-align: center;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 160%;
   }
   .Publications { 
     height: 100%;
@@ -661,5 +670,43 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-}
+  }
+
+  .btnPublic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2%;
+    position: fixed;
+    padding: 2% 0% 4% 3%;
+    width: 100%;
+    background-color: #c4c4c4;
+    top: 86%;
+    z-index: 2;
+  }
+
+  .boxPublic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 20%;
+  }
+
+  #container {
+    padding-top: 17.8%;
+  }
+
+  .btnScrollTop {
+    margin-top: -184%;
+  }
+
+  .scrollUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0%;
+    opacity: 1;
+    visibility: visible;
+  }
 }

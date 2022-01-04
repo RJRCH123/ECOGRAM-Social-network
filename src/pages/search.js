@@ -1,175 +1,226 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable func-names */
+/* eslint-disable no-use-before-define */
+/* eslint-disable prefer-const */
+/* eslint-disable guard-for-in */
+/* eslint-disable no-extend-native */
+import {
+  getDocs,
+  collection,
+  db,
+  query,
+  where,
+} from '../utils/firebaseconfig.js';
+import { countries } from '../utils/countries.js';
+
+// import { dataInterests } from '../utils/interests.js';
+import { nameInterests } from '../utils/interests.js';
+
+String.prototype.capitalize = function () {
+// console.log(this.charAt(0).toUpperCase() + this.slice(1));
+  return this.charAt(0).toUpperCase() + this.slice(1);
+};
+
+// Function - Get Users data from Firestore
+async function usersInFirestore() {
+  const usersData = await getDocs(collection(db, 'users'));
+  return usersData;
+}
+
+// Template View Search Users
 const Search = () => {
   const viewSearch = `      
-    <main class="main">
-    <div class="container">
-      <div class="caja1">
-        <div class="input">
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <div class='container'>
+      <div id="scrollUpContainerSearch" class="hideBtnUpSearch scrollUpContainerSearch">
+        <button id="btnScrollTopSearch" class="btnScrollTopSearch"><img src="img/Icons/Up.png"></button>
+      </div>
+      <div class='caja1'>
+        <div class='input'>
+          <input type='text' id='fname' name='firstname' placeholder='🔍 User name..'>
         </div>
-        <div class="filtros">
-          <div class="filtro1">
-              <select name="select">
-                <option value="Country">Country</opcion>
-                <option value="Peru">Perú</opcion>
-                <option value="Mexico">México</opcion>
-                <option value="Chile">Chile</opcion>
-                <option value="Venezuela">Venezuela</opcion>
-                <option value="Argentina">Argentina</opcion>
-                <option value="Nicaragua">Nicaragua</opcion>
+        <div class='filtros'>
+          <div class='filtro1'>
+              <select class='selectCountry' name='select'>
+                <option value='Country'>Country</option>
               </select>
           </div>
-              
-
-          <div class="filtro2">
-            <select name="select">
-              <option value="Interest">Interest</opcion>
-              <option value="Energia">Energía</opcion>
-              <option value="Agua">Agua</opcion>
-              <option value="Reciclaje">Reciclaje</opcion>
-              <option value="Siembra">Siembra</opcion>
-              <option value="Argentina">Argentina</opcion>
-              <option value="Nicaragua">Nicaragua</opcion>
+          <div class='filtro2'>
+            <select  class='selectInterest' name='select'>
+              <option value='Interest'>Interest</opcion>
             </select>
           </div>
         </div>
       </div>
-      <div class="caja2">
-        <div class="search">
-          <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA1.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">JUANITO ARISTISABAL</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
+      <div class='caja2'></div>
+      </div>
+`;
+  const divElemt = document.createElement('div');
+  divElemt.innerHTML = viewSearch;
+
+  // Clear
+  const clearCards = () => {
+    while (divCardUser.firstChild) {
+      divCardUser.firstChild.remove();
+    }
+  };
+
+  // Divs querySelector
+  const divCardUser = divElemt.querySelector('.caja2');
+  const divInputName = divElemt.querySelector('#fname');
+  const divSelectCountry = divElemt.querySelector('.selectCountry');
+  const divSelectInterest = divElemt.querySelector('.selectInterest');
+
+  // btn Scroll Up
+  const scrollUpContainer = divElemt.querySelector('#scrollUpContainerSearch');
+  const scrollUpbtn = divElemt.querySelector('#btnScrollTopSearch');
+
+  // btn Scroll Up functions
+  const getPixels = () => document.documentElement.scrollTop || document.body.scrollTop;
+  const up = () => {
+    if (getPixels() > 0) {
+      requestAnimationFrame(up);
+      // eslint-disable-next-line no-restricted-globals
+      scrollTo(0, getPixels() - (getPixels() / 20));
+    }
+  };
+
+  const indicatedScroll = () => {
+    if (getPixels() > 80) {
+      scrollUpContainer.classList.remove('hideBtnUpSearch');
+    } else {
+      scrollUpContainer.classList.add('hideBtnUpSearch');
+    }
+  };
+
+  scrollUpbtn.addEventListener('click', up);
+  window.addEventListener('scroll', indicatedScroll);
+
+  // Filter
+  async function filterUsers(key, divElem) {
+    clearCards();
+    const filterInfo = divElem;
+    let q = query(collection(db, 'users'));
+
+    if (key == 'username') {
+      console.log('filterInfo.value: ', filterInfo.value);
+      q = query(collection(db, 'users'),
+        where('name', '>=', filterInfo.value.capitalize()),
+        where('name', '<=', `${filterInfo.value.capitalize()}\uf8ff`));
+    }
+    if (key == 'country') {
+      q = query(collection(db, 'users'), where('country', '==', filterInfo.value));
+    }
+    if (key == 'interests') {
+      q = query(collection(db, 'users'), where('interests', 'array-contains', filterInfo.value));
+    }
+    const querySnapshot = await getDocs(q);
+    printDataUsers(querySnapshot);
+  }
+
+  // Show input - filter Name
+  divInputName.addEventListener('keyup', () => { filterUsers('username', divInputName); });
+
+  // Show countries
+  // eslint-disable-next-line no-restricted-syntax
+  for (const prop in countries) {
+    divSelectCountry.innerHTML += `
+    <option value='${prop}:${countries[prop]}'>
+      ${countries[prop]}
+    </option>`;
+  }
+  divSelectCountry.addEventListener('change', () => { filterUsers('country', divSelectCountry); });
+
+  // Show Select Interest
+  // eslint-disable-next-line no-restricted-syntax
+
+  //   for (const prop in dataInterests) {
+  //     divSelectInterest.innerHTML += `
+  //     <option value='${dataInterests[prop]}'>
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const prop in nameInterests) {
+    divSelectInterest.innerHTML += `
+    <option value='${nameInterests[prop]}'>
+      ${prop}
+    </option>`;
+  }
+
+  // Select interest
+  divSelectInterest.addEventListener('change', () => {
+    // console.log('divSelectInterest:', divSelectInterest.value);
+    filterUsers('interests', divSelectInterest);
+  });
+
+  // Print Users -> for user
+  function printDataUsers(data) {
+    // console.log('data: ', data);
+    const dataUsers = data;
+    dataUsers.forEach((doc) => {
+      // Print One User
+      let user; let photo; let fullname; let country; let interests; let bio;
+      user = doc.data();
+      photo = user.photo;
+      fullname = user.name;
+      country = user.country.split(':')[1];
+      interests = user.interests;
+      bio = user.bio;
+      printUser(photo, fullname, country, interests, bio);
+    });
+  }
+
+  // Print One card user
+  function printUser(photo, fullname, country, interests, bio) {
+    divCardUser.innerHTML += `
+        <div class='search'>
+          <div class='perfil'>
+          <img class='imgPerfil' src='${photo}' alt=''>
+          <button id="btnSeeUserPost" class="btnSeeUserPost">
+            <a id="btnSeeUser" href="#/home" data-ref='${fullname}'>See Posts</a>
+          </button></div>
+          <div class='caracteres'>
+            <div class='nombre'>${fullname}</div>
+            <div class='pais'>${country}</div>
+            <div class='intereses'>
+              <div class='imgCaracteres'><img src='${interests[0]}' alt=''></div>
+              <div class='imgCaracteres'><img src='${interests[1]}' alt=''></div>
+              <div class='imgCaracteres'><img src='${interests[2]}' alt=''></div>
+            </div>
+            <div class='flexBtn'>
+              <p id="txtBioPost" class="txtBioPost">${bio}</p>
             </div>
           </div>  
         </div>
-        <div class="search">
-          <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Human/AvatarH1.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">VICENTE VALERIO</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> 
-        </div>
-        <div class="search">
-          <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA3.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">LUIS JIMENEZ</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> 
-        </div>
-        <div class="search">
-          <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Human/AvatarH2.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">ADRIANA LOPEZ</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> 
-        </div>
-        <div class="search">
-          <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA5.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">CRISTIAN CASTRO</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> 
-        </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Human/AvatarH4.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">PEDRO SUAREZ</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA6.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">DIEGO DOMINGUEZ</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Human/AvatarH6.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">ADRIÁN PLAZA</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA9.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">MARC DUQUE </div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Human/AvatarH8.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">PAULA SALA</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Animals/AvatarA8.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">XAVIER FANER</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        <div class="search">   <div class="perfil"><img class="imgPerfil" src="/src/img/Avatares/Plants/AvatarP2.png" alt=""></div>
-          <div class="caracteres">
-            <div class="nombre">MARGALIDA PERELLO</div>
-            <div class="pais">Perú</div>
-            <div class="intereses">
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AguaCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-              <div class="imgCaracteres"><img src="/src/img/Intereses/InteresesCN/AnimalCN.png" alt=""></div>
-            </div>
-          </div> </div>
-        </div>
-      </div>
-    </main>`;
+  `;
 
-  const divElemt = document.createElement('div');
-  divElemt.innerHTML = viewSearch;
+    // Button See Post
+    const btnSeeUserPosts = divCardUser.querySelectorAll('#btnSeeUser');
+
+    btnSeeUserPosts.forEach((element) => {
+      element.addEventListener('click', (e) => {
+        let userSearch = e.target.dataset.ref;
+        let objName = {
+          name: `${userSearch}`,
+        };
+        sessionStorage.setItem('userSearch', (JSON.stringify(objName)));
+      });
+    });
+  }
+
+  // Users in Firestore and print
+  const infoUsers = () => {
+    usersInFirestore()
+      .then((querySnapshot) => {
+        const data = querySnapshot;
+        // Print
+        printDataUsers(data);
+      })
+      .catch((err) => {
+        console.log('err: ', err);
+      });
+  };
+
+  // Users
+  infoUsers();
 
   return divElemt;
 };

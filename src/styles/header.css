@@ -3,7 +3,6 @@
 .header {
   height: 60px;
   background-color: rgb(21 32 36 / 69%);
-  /* position: fixed; */
   width: 100%;
   top: 0;
   left: 0;
@@ -12,16 +11,17 @@
 
 main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.87)),
-    url("/src/img/Photos/img-10.jpg");
+    url("img/Photos/img-10.jpg");
   background-size: cover;
-  height: 800px;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
+  position: fixed;
   margin: 0 auto;
-  background-color: #000000bf;
+  background-color: black;
+  z-index: 3;
 }
 
 .nav-link {
@@ -29,8 +29,13 @@ main {
   color: beige;
 }
 
+#OpenDefault {
+  width: 5%;
+}
+
 .logo {
-  width: 30%;
+  width: 20%;
+  margin: 0% 5%;
 }
 
 .nav-menu {
@@ -41,17 +46,12 @@ main {
 
 .nav-menu-item {
   font-size: 18px;
-  /* margin: 0 10px;
-  line-height: 80px; */
   width: max-content;
+  text-align: center;
 }
 
 .nav-menu-item img {
-  width: 40%;
-}
-
-.nav-menu-item p {
-  display: none;
+  width: 30%;
 }
 
 .nav-menu-link {
@@ -64,39 +64,29 @@ main {
   transition: 0.5s;
 }
 
-.NavToggle {
-  background-color: rgb(40 56 55 / 0%);
-  border: none;
-  display: none;
-  cursor: pointer;
-}
-
-.MenuBar {
-  width: 40px;
-}
-
 /************* HEADER  RESPONSIVE*************/
 
 @media (max-width: 768px) {
   .logo {
-    width: 60%;
+    /* width: 60%; */
+    width: 80%;
+    margin: 1% 5%;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    margin: 0 auto;
+    background-color: black;
+    z-index: 4;
   }
 
   .nav-menu {
-    flex-direction: column;
-    /* align-items: center; */
-    /* list-style: none; */
     background-color: black;
-    position: absolute;
-    top: 62px;
-    width: 100%;
-    /* padding: 20px 0; */
-    height: calc(100% - 80px);
-    /* overflow-y: auto; */
-    left: 100%;
-    transition: left 0.3s;
+    display: flex;
+    transition: right 0.3s;
     z-index: 5;
-    /* padding: 10% 0% 0% 10.7%;*/
   }
 
   .nav-menu-item {
@@ -104,11 +94,8 @@ main {
   }
 
   .nav-menu-item img {
-    width: 50px;
-  }
-
-  .nav-menu-item p {
-    display: block;
+    width: 30px;
+    margin-left: 2%;
   }
 
   .nav-menu-link:hover {
@@ -116,31 +103,9 @@ main {
     color: #45aa4aea;
   }
 
-  .NavToggle {
-    display: block;
-    margin-right: 5%;
-  }
-
-  .nav-menu_visible {
-    left: 0;
-    width: -webkit-fill-available;
-    display: inline-grid;
-    /* justify-items: start; */
-    justify-content: center;
-  }
-
-  .MenuBar {
-    width: 40px;
-  }
-
-  /* Hover of line */
-  .nav-menu li {
-    margin: 3%;
-  }
-
   .nav-menu a {
     position: relative;
-    padding: 5px;
+    padding: 8px;
     display: flex;
     align-items: center;
     column-gap: 10%;
@@ -173,12 +138,12 @@ main {
     transform-origin: center;
   }
 }
-
+#OpenDefault {
+  width: 20%;
+}
 @media (max-width: 400px) {
   .logo {
-    width: 60%;
-  } 
-  .nav-menu {
-    top: 61px;
+    width: 80%;
+    margin: 1% 5%;
   } 
 }

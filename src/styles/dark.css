@@ -117,6 +117,22 @@ body.dark #selectInterest {
   background-color: #2f2f2f;
 }
 
+body.dark .img0 img:hover,
+body.dark .img1 img:hover,
+body.dark .img2 img:hover,
+body.dark .img3 img:hover,
+body.dark .img4 img:hover,
+body.dark .img5 img:hover,
+body.dark .img6 img:hover,
+body.dark .img7 img:hover,
+body.dark .img8 img:hover,
+body.dark .img9 img:hover,
+body.dark .img10 img:hover,
+body.dark .img11 img:hover{
+  border-color: rgb(61, 63, 73);
+  transform: scale(1.1);
+}
+
 @media screen and (max-width: 760px) {
   body.dark .btnEditPost,
   body.dark .btnDelete {

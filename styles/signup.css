@@ -1,3 +1,7 @@
+/* * {
+  margin: 0px;
+} */
+
 .BoxSignUp {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -86,10 +90,8 @@
 }
 
 .LoginGooglebtn:hover,
-.btn-welcome-google:hover {
+.signupbtn:hover {
   opacity: 8;
-  background-color: #e6090996;
-  transform: scale(1.02);
 }
 
 .clearfix {

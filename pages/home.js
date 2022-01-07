@@ -429,7 +429,7 @@ const Home = () => {
     }
   });
 
-  console.log('files.......', files);
+  // console.log('files.......', files);
 
   //  Función para eliminar el contenido del input al momento de cancelar
   const deleteContentInput = () => {
@@ -785,7 +785,7 @@ const Home = () => {
     if (Object.keys(filterMyPost) == 'name') {
       //  console.log('filter user: ', filterMyPost.name);
       const q = query(
-        collection(db, 'users'), 
+        collection(db, 'users'),
         where('name', '>=', filterMyPost.name.capitalize()),
         where('name', '<=', `${filterMyPost.name.capitalize()}\uf8ff`),
       );

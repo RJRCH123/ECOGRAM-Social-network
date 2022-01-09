@@ -368,7 +368,6 @@ const Home = () => {
       fileReader.addEventListener('load', function () {
         imgPreview.style.display = 'block';
         const fileName = `${file.name}`.replace(/\s+/g, '').split('.')[0].replace(/[.*+\-?^${}()|[\]\\]/g, '');
-        console.log('🚀 ~ file: home.js ~ line 309 ~ fileName', fileName);
 
         imgPreview.innerHTML += `
         <div id='${fileName}' data-ref='${fileName}' class='boxFlexbtnX'>
@@ -403,7 +402,6 @@ const Home = () => {
   const divCamera = containerHome.querySelector('.inputFilePost');
   divCamera.addEventListener('change', (e) => {
     countFiles = imgPreview.childElementCount + 1;
-    console.log('countFiles', countFiles);
 
     if (countFiles > 2) {
       alertNoMoreImgs.classList.remove('hide');
@@ -412,7 +410,6 @@ const Home = () => {
     if (countFiles === 1) {
       cleanModal();
       files = Object.values(e.target.files);
-      //  console.log('1 archivo', files);
       previewPost(files[0]);
       arr.push(files[0]);
     }
@@ -420,15 +417,11 @@ const Home = () => {
     if (countFiles === 2) {
       cleanModal();
       files = Object.values(e.target.files);
-      console.log('2 archivos arr', files);
       previewPost(files[0]);
       arr.push(files[0]);
-      console.log('total files', arr);
       files = arr;
     }
   });
-
-  console.log('files.......', files);
 
   //  Función para eliminar el contenido del input al momento de cancelar
   const deleteContentInput = () => {

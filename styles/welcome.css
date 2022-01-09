@@ -80,7 +80,7 @@ a {
 
 .btn-welcome-signin,
 .btn-welcome-signup {
-  background-color: rgb(44, 45, 46);
+  background-color: #6c6262;;
   width: 270px;
   height: 100%;
   border-radius: 10px;
@@ -97,13 +97,6 @@ a {
   margin:  1.61%;
   font-weight: bolder;
 }
-
-.btn-welcome-google:hover,
-.btn-welcome-signin:hover,
-.btn-welcome-signup:hover {
-  opacity: 8;
-}
-
 
 @media screen and (min-width: 400px) and (max-width: 800px) {
   .btn-welcome-google,
@@ -176,12 +169,8 @@ a {
 }
 
 @media screen and (min-height: 630px) and (min-height: 640px){
-  /* .hero-text {
-    height: 640px;
-  } */
   .logoHome {
     width: 30%;
-    /* margin: 8% 0; */
     border-radius: 100%;
   }
 }

@@ -22,7 +22,6 @@ import {
   deleteDoc,
   query,
   where,
-  orderBy,
 } from '../utils/firebaseconfig.js';
 
 import {
@@ -429,7 +428,7 @@ const Home = () => {
     }
   });
 
-  // console.log('files.......', files);
+  console.log('files.......', files);
 
   //  Función para eliminar el contenido del input al momento de cancelar
   const deleteContentInput = () => {
@@ -631,7 +630,7 @@ const Home = () => {
 
       /* ***** Agrega una nueva publicación por usuario colocandola de primera ***** */
 
-      divPublicado.appendChild(
+      divPublicado.prepend(
         publicationComponent(
           nameUser,
           myPost,
@@ -766,7 +765,7 @@ const Home = () => {
         uidUserFilter = element.data().uid;
       });
       const qa = query(
-        collection(db, 'publications'), orderBy('dateCreated', 'desc'),
+        collection(db, 'publications'),
         where('author', '==', uidUserFilter),
       );
       querySnapshotPublications = await getDocs(qa);
@@ -776,7 +775,7 @@ const Home = () => {
 
     if (Object.keys(filterMyPost) == 'my') {
       const q = query(
-        collection(db, 'publications'), orderBy('dateCreated', 'desc'),
+        collection(db, 'publications'),
         where('author', '==', sessionStorage.getItem('key')),
       );
       querySnapshotPublications = await getDocs(q);
@@ -798,7 +797,7 @@ const Home = () => {
       });
 
       const qa = query(
-        collection(db, 'publications'), orderBy('dateCreated', 'desc'),
+        collection(db, 'publications'),
         where('author', '==', uidUserFilter),
       );
 

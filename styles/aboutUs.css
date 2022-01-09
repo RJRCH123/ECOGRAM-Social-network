@@ -1,5 +1,10 @@
 /************ ABOUS PAGE ***********/
 
+li::marker {
+  color: rgb(1, 121, 1);
+  font-size: medium;
+}
+
 #AboutUs {
   background-color: rgb(255, 255, 255);
   /* height: 1000px; */

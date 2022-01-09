@@ -5,7 +5,7 @@
     "jest/globals": true
   },
   "extends": [
-    "airbnb-base"
+    "airbnb-base" 
   ],
   "globals": {
     "Atomics": "readonly",

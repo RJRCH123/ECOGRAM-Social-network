@@ -35,23 +35,23 @@ Los principales usuarios del producto son aquellas personas interesadas en encon
 ###  🕵🏽‍♂️ ¿Cuáles son las secciones más relevantes que quieren ver en la interfaz? y ¿por qué?
 Según algunas encuestas que realizamos, los usuarios están interesados en ver:
   
-  - **📌 Sección de publicaciones:**
+  ### **📌 Sección de publicaciones:**
     - Un muro 📃 para visualizar las publicaciones de todos los usuarios.
     - Sistema de filtrados para las publicaciones 📝: por nombre de usuario y por fecha 📅.
-  - **📌 Sección de perfil:** 
+  ### **📌 Sección de perfil:** 
     - Se visualizará la información 🗂 del usuario: nombre, correo 📪, país, biografía e intereses.
-  - **📌 Sección para búsqueda de usuarios:**
+  ### **📌 Sección para búsqueda de usuarios:**
     - Contendrá todos los usuarios existentes. 🧔 👨‍🦱 👴 👩‍🦰 👱‍♂️ 👳 👲
     - Sistema de filtrados según intereses, país y nombre.
     - Opción para visualizar los posts según el usuario.
-  - **📌 Sección para editar el perfil:**
+  ### **📌 Sección para editar el perfil:**
     - Tendrá opciones para editar la biografía.
     - Tendrá opciones para escoger el país.
     - Tendrá opciones para escoger el avatar o adjuntar uno personalizado.
     - Tendrá opciones para escoger los intereses. 👨‍🌾 👩‍🔬 👨‍🚀
-  - **📌 Sección de información 📚 sobre Ecogram:**
+  ### **📌 Sección de información 📚 sobre Ecogram:**
     - Contendrá enfoque, objetivo y fundadores de Ecogram.
-  - **📌 Sección de noticias globales sobre el medio ambiente:**
+  ### **📌 Sección de noticias globales sobre el medio ambiente:**
     - Contendrá fuente oficial de la noticia 📰 publicada y tendra la opción de reedirigirte a la misma. 
 
 ###  🕵🏾‍♀️ ¿Cuándo utilizan o utilizarían el producto?
@@ -98,6 +98,7 @@ A continuación, se mostrará parte del prototipado de alta fidelidad, si desea 
 ## 3.2 Resultado final: 💁🏼
 A continuación se adjuntará una breve videodemostración del resultado final tanto en diseño como en funcionalidad. Si desea verlo completo puede dar click:
 -  [Prototipado videodemostración completa](https://github.com/RJRCH123/LIM016-social-network/blob/dev/practicekmr/src/img/Readme/screen-recorder-mon-jan-03-2022-22-22-16.mp4)
+-  [Link para visualizar la página](https://rjrch123.github.io/ECOGRAM-Social-network/)
 
 <div align="center">
 <img src="/src/img/Readme/gif.gif" width="800">

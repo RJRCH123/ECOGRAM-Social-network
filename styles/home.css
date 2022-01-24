@@ -554,6 +554,7 @@ body {
     justify-content: center;
     justify-content: space-evenly;
     margin-top: 0;
+    padding-top: 17.8%;
   }
   .linea2 {
     margin: 0rem 1rem;
@@ -698,9 +699,9 @@ body {
     padding-bottom: 20%;
   }
 
-  #container {
+  /* #container {
     padding-top: 17.8%;
-  }
+  } */
 
   .btnScrollTop {
     margin-top: -184%;
@@ -713,5 +714,11 @@ body {
     padding-top: 0%;
     opacity: 1;
     visibility: visible;
+  }
+
+  .position {
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 }

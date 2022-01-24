@@ -170,7 +170,7 @@ a {
 
 @media screen and (min-height: 630px) and (min-height: 640px){
   .logoHome {
-    width: 30%;
+    width: 50%;
     border-radius: 100%;
   }
 }

@@ -496,6 +496,7 @@
   .containerSection {
     display: flex;
     flex-direction: column;
+    padding-top: 17.8%;
   }
 
   .nameUser {

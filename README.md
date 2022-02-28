@@ -11,9 +11,10 @@
 
 <div align="center">
 <img src="/src/img/Logos/LogoG7.png" width="800">
+  ![](https://komarev.com/ghpvc/?username=Ecogram&color=yellow)
 </div>
 
-![](https://komarev.com/ghpvc/?username=Ecogram&color=yellow)
+
 
 # 1. Ecogram
 

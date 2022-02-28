@@ -13,6 +13,8 @@
 <img src="/src/img/Logos/LogoG7.png" width="800">
 </div>
 
+![](https://komarev.com/ghpvc/?username=Ecogram&color=yellow)
+
 # 1. Ecogram
 
 ♻️ **Ecogram** (Enveronmental Social Network) es una red social enfocada en crear una comunidad interesada en la preservación de nuestro único hogar "🌎El Planeta Tierra". Permite a cualquier usuario crearse una cuenta de acceso y loguearse con ella; crear, editar, borrar y "likear" publicacciones.
